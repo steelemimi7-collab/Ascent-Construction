@@ -1,0 +1,399 @@
+import Link from 'next/link';
+import ProjectGallery from '@/components/ProjectGallery';
+import HeroPhoto from '@/components/HeroPhoto';
+
+const projects = {
+  'custom-home-fresno': {
+    title: 'Custom Home',
+    type: 'Residential Construction',
+    location: 'Fresno, CA',
+    year: '2024',
+    description: 'A full custom home build in Fresno. This project involved site prep, foundation, framing, and all finishes through final walkthrough. Built around the client\'s vision from the ground up.',
+    details: [
+      { label: 'Project Type', value: 'Custom Home' },
+      { label: 'Location', value: 'Fresno, CA' },
+      { label: 'Year', value: '2024' },
+      { label: 'Size', value: '[Square footage]' },
+      { label: 'Duration', value: '[Project timeline]' },
+    ],
+    photos: [
+      { src: null, caption: 'Front exterior' },
+      { src: null, caption: 'Main living area' },
+      { src: null, caption: 'Kitchen' },
+      { src: null, caption: 'Master bedroom' },
+    ],
+  },
+  'ranch-shop-madera': {
+    title: 'Ranch Shop & Arena',
+    type: 'Ranch & Agricultural',
+    location: 'Madera, CA',
+    year: '2024',
+    description: 'A large-scale ranch build including a working shop and arena. Designed for real agricultural use and built to handle equipment, livestock, and the wear that comes with a working property.',
+    details: [
+      { label: 'Project Type', value: 'Ranch Shop & Arena' },
+      { label: 'Location', value: 'Madera, CA' },
+      { label: 'Year', value: '2024' },
+      { label: 'Size', value: '[Square footage]' },
+      { label: 'Duration', value: '[Project timeline]' },
+    ],
+    photos: [
+      { src: null, caption: 'Shop exterior' },
+      { src: null, caption: 'Arena overview' },
+      { src: null, caption: 'Interior shop' },
+    ],
+  },
+  'outdoor-living-clovis': {
+    title: 'Outdoor Living Space',
+    type: 'Outdoor Living & Recreation',
+    location: 'Clovis, CA',
+    year: '2023',
+    description: 'A complete outdoor living build including a covered patio, fire pit, and landscaping. Designed to be used and enjoyed year-round.',
+    details: [
+      { label: 'Project Type', value: 'Outdoor Living' },
+      { label: 'Location', value: 'Clovis, CA' },
+      { label: 'Year', value: '2023' },
+      { label: 'Features', value: 'Covered patio, fire pit' },
+      { label: 'Duration', value: '[Project timeline]' },
+    ],
+    photos: [
+      { src: null, caption: 'Covered patio' },
+      { src: null, caption: 'Fire pit area' },
+      { src: null, caption: 'Overall view' },
+    ],
+  },
+  'studio': {
+    title: 'Studio',
+    type: 'Residential Construction',
+    location: 'Sanger, CA',
+    year: '2024',
+    description: 'A modern detached studio with vaulted wood ceilings, a full kitchen, a lofted sleeping area, and custom finishes throughout. It works as a flexible living and getaway space on the property.',
+    details: [
+      { label: 'Project Type', value: 'Residential Construction' },
+      { label: 'Location', value: 'Sanger, CA' },
+      { label: 'Year', value: '2024' },
+      { label: 'Size', value: '[Square footage]' },
+      { label: 'Duration', value: '[Project timeline]' },
+    ],
+    hero: '/studio/studio-08.jpg',
+    photos: [
+      { src: '/studio/studio-01.jpg' },
+      { src: '/studio/studio-02.jpg' },
+      { src: '/studio/studio-03.jpg' },
+      { src: '/studio/studio-04.jpg' },
+      { src: '/studio/studio-05.jpg' },
+      { src: '/studio/studio-06.jpg' },
+      { src: '/studio/studio-07.jpg' },
+      { src: '/studio/studio-08.jpg' },
+      { src: '/studio/studio-09.jpg' },
+      { src: '/studio/studio-10.jpg' },
+      { src: '/studio/studio-11.jpg' },
+      { src: '/studio/studio-12.jpg' },
+      { src: '/studio/studio-13.jpg' },
+    ],
+  },
+  'treehouse': {
+    title: 'Tree House',
+    type: 'Outdoor Living & Recreation',
+    location: 'Sanger, CA',
+    year: '2024',
+    description: 'A modern elevated tree house retreat, built from the ground up among the trees. This custom getaway has a curved roof, wraparound deck, and big windows that open onto the property. Designed and constructed start to finish as a one-of-a-kind outdoor living and recreation space made for relaxing and getting away without leaving home.',
+    details: [
+      { label: 'Project Type', value: 'Outdoor Living & Recreation' },
+      { label: 'Location', value: 'Sanger, CA' },
+      { label: 'Year', value: '2024' },
+      { label: 'Size', value: '[Square footage]' },
+      { label: 'Duration', value: '[Project timeline]' },
+    ],
+    hero: '/treehouse/treehouse-01.jpg',
+    photos: [
+      { src: '/treehouse/treehouse-01.jpg' },
+      { src: '/treehouse/treehouse-02.jpg' },
+      { src: '/treehouse/treehouse-03.jpg' },
+      { src: '/treehouse/treehouse-04.jpg' },
+    ],
+  },
+  'pasture': {
+    title: 'Horse Barns & Pasture',
+    type: 'Ranch & Agricultural',
+    location: 'Sanger, CA',
+    year: '2023',
+    description: 'A working horse property built with reclaimed lumber, featuring barns with a tack room and hay storage, a run-in shelter, board fencing, and irrigated pasture. Designed for real agricultural use and built to handle livestock, equipment, and weather over the long run.',
+    details: [
+      { label: 'Project Type', value: 'Ranch & Agricultural' },
+      { label: 'Location', value: 'Sanger, CA' },
+      { label: 'Year', value: '2023' },
+      { label: 'Size', value: '[Square footage]' },
+      { label: 'Duration', value: '[Project timeline]' },
+    ],
+    hero: '/pasture/pasture-02.png',
+    photos: [
+      { src: '/pasture/pasture-08.jpg' },
+      { src: '/pasture/pasture-01.png' },
+      { src: '/pasture/pasture-02.png' },
+      { src: '/pasture/pasture-03.png' },
+      { src: '/pasture/pasture-04.png' },
+      { src: '/pasture/pasture-05.jpg' },
+      { src: '/pasture/pasture-06.jpg' },
+      { src: '/pasture/pasture-07.jpg' },
+    ],
+  },
+  'project-4': {
+    title: 'Project Name',
+    type: 'Mountain Homes',
+    location: 'Oakhurst, CA',
+    year: '2024',
+    description: '[Project description coming soon]',
+    details: [
+      { label: 'Project Type', value: 'Mountain Home' },
+      { label: 'Location', value: 'Oakhurst, CA' },
+      { label: 'Year', value: '2024' },
+      { label: 'Size', value: '[Square footage]' },
+      { label: 'Duration', value: '[Project timeline]' },
+    ],
+    photos: [
+      { src: null, caption: 'Photo 1' },
+      { src: null, caption: 'Photo 2' },
+      { src: null, caption: 'Photo 3' },
+    ],
+  },
+  'project-5': {
+    title: 'Project Name',
+    type: 'Fire Pits',
+    location: 'Clovis, CA',
+    year: '2024',
+    description: '[Project description coming soon]',
+    details: [
+      { label: 'Project Type', value: 'Fire Pit' },
+      { label: 'Location', value: 'Clovis, CA' },
+      { label: 'Year', value: '2024' },
+      { label: 'Size', value: '[Square footage]' },
+      { label: 'Duration', value: '[Project timeline]' },
+    ],
+    photos: [
+      { src: null, caption: 'Photo 1' },
+      { src: null, caption: 'Photo 2' },
+      { src: null, caption: 'Photo 3' },
+    ],
+  },
+  'shaver-cabin': {
+    title: 'Shaver Cabin',
+    type: 'Mountain Homes',
+    location: 'Shaver Lake, CA',
+    year: '2025',
+    hero: '/ruiz-cabin/ruiz-cabin-lower-13.jpg',
+    description: 'A full interior remodel of a mountain cabin in Shaver Lake after significant flood and water damage. We rebuilt the inside from the studs out, restoring the living spaces, bedrooms, and bathrooms with durable, high-quality finishes throughout. The result is a warm, move-in ready mountain retreat that feels brand new.',
+    details: [
+      { label: 'Project Type', value: 'Mountain Home' },
+      { label: 'Location', value: 'Shaver Lake, CA' },
+      { label: 'Year', value: '2025' },
+      { label: 'Size', value: '[Square footage]' },
+      { label: 'Duration', value: '[Project timeline]' },
+    ],
+    photos: [
+      { src: '/ruiz-cabin/ruiz-cabin-lower-14.jpg' },
+      { src: '/ruiz-cabin/ruiz-cabin-lower-01.jpg' },
+      { src: '/ruiz-cabin/ruiz-cabin-lower-02.jpg' },
+      { src: '/ruiz-cabin/ruiz-cabin-lower-03.jpg' },
+      { src: '/ruiz-cabin/ruiz-cabin-lower-04.jpg' },
+      { src: '/ruiz-cabin/ruiz-cabin-lower-05.jpg' },
+      { src: '/ruiz-cabin/ruiz-cabin-lower-06.jpg' },
+      { src: '/ruiz-cabin/ruiz-cabin-lower-07.jpg' },
+      { src: '/ruiz-cabin/ruiz-cabin-lower-08.jpg' },
+      { src: '/ruiz-cabin/ruiz-cabin-lower-09.jpg' },
+      { src: '/ruiz-cabin/ruiz-cabin-lower-10.jpg' },
+      { src: '/ruiz-cabin/ruiz-cabin-lower-11.jpg' },
+      { src: '/ruiz-cabin/ruiz-cabin-lower-12.jpg' },
+      { src: '/ruiz-cabin/ruiz-cabin-lower-13.jpg' },
+      { src: '/ruiz-cabin/ruiz-cabin-lower-15.jpg' },
+      { src: '/ruiz-cabin/ruiz-cabin-lower-16.jpg' },
+      { src: '/ruiz-cabin/ruiz-cabin-lower-17.jpg' },
+      { src: '/ruiz-cabin/ruiz-cabin-lower-18.jpg' },
+    ],
+  },
+  'project-6': {
+    title: 'Project Name',
+    type: 'Commercial',
+    location: 'Fresno, CA',
+    year: '2023',
+    description: '[Project description coming soon]',
+    details: [
+      { label: 'Project Type', value: 'Commercial' },
+      { label: 'Location', value: 'Fresno, CA' },
+      { label: 'Year', value: '2023' },
+      { label: 'Size', value: '[Square footage]' },
+      { label: 'Duration', value: '[Project timeline]' },
+    ],
+    photos: [
+      { src: null, caption: 'Photo 1' },
+      { src: null, caption: 'Photo 2' },
+      { src: null, caption: 'Photo 3' },
+    ],
+  },
+  'project-7': {
+    title: 'Project Name',
+    type: 'Residential',
+    location: 'Visalia, CA',
+    year: '2023',
+    description: '[Project description coming soon]',
+    details: [
+      { label: 'Project Type', value: 'Residential' },
+      { label: 'Location', value: 'Visalia, CA' },
+      { label: 'Year', value: '2023' },
+      { label: 'Size', value: '[Square footage]' },
+      { label: 'Duration', value: '[Project timeline]' },
+    ],
+    photos: [
+      { src: null, caption: 'Photo 1' },
+      { src: null, caption: 'Photo 2' },
+      { src: null, caption: 'Photo 3' },
+    ],
+  },
+  'project-8': {
+    title: 'Project Name',
+    type: 'Ranch & Ag',
+    location: 'Madera, CA',
+    year: '2022',
+    description: '[Project description coming soon]',
+    details: [
+      { label: 'Project Type', value: 'Ranch & Ag' },
+      { label: 'Location', value: 'Madera, CA' },
+      { label: 'Year', value: '2022' },
+      { label: 'Size', value: '[Square footage]' },
+      { label: 'Duration', value: '[Project timeline]' },
+    ],
+    photos: [
+      { src: null, caption: 'Photo 1' },
+      { src: null, caption: 'Photo 2' },
+      { src: null, caption: 'Photo 3' },
+    ],
+  },
+  'project-9': {
+    title: 'Project Name',
+    type: 'Outdoor Living',
+    location: 'Fresno, CA',
+    year: '2022',
+    description: '[Project description coming soon]',
+    details: [
+      { label: 'Project Type', value: 'Outdoor Living' },
+      { label: 'Location', value: 'Fresno, CA' },
+      { label: 'Year', value: '2022' },
+      { label: 'Size', value: '[Square footage]' },
+      { label: 'Duration', value: '[Project timeline]' },
+    ],
+    photos: [
+      { src: null, caption: 'Photo 1' },
+      { src: null, caption: 'Photo 2' },
+      { src: null, caption: 'Photo 3' },
+    ],
+  },
+};
+
+export function generateStaticParams() {
+  return Object.keys(projects).map((slug) => ({ slug }));
+}
+
+export default function ProjectPage({ params }) {
+  const project = projects[params.slug];
+
+  if (!project) {
+    return (
+      <div className="min-h-screen bg-base flex items-center justify-center pt-20">
+        <div className="text-center">
+          <p className="font-display text-4xl text-fore uppercase">Project not found</p>
+          <Link href="/services" className="btn-primary mt-8 inline-block">Back to Services</Link>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <section className="relative bg-base pt-32 pb-16 border-b border-edge overflow-hidden">
+        <div className="absolute left-0 top-0 bottom-0 w-1 bg-accent" />
+        <div className="max-w-7xl mx-auto px-6">
+          <Link href="/services" className="font-display text-xs tracking-widest uppercase text-muted hover:text-accent transition-colors mb-6 inline-block">
+            ← Back to Services
+          </Link>
+          <p className="label mb-3">{project.type}</p>
+          <h1 className="font-display font-800 text-5xl md:text-6xl uppercase tracking-tightest text-fore leading-none mb-4">
+            {project.title}
+          </h1>
+          <p className="font-display text-sm tracking-widest uppercase text-muted">
+            {project.location} · {project.year}
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-surface-2 border-b border-edge">
+        <div className="max-w-7xl mx-auto px-6 py-12">
+          <div className="bg-surface border border-edge h-96 md:h-[500px] flex items-center justify-center relative overflow-hidden">
+            {project.hero ? (
+              <HeroPhoto src={project.hero} alt={project.title} />
+            ) : (
+              <div className="text-center">
+                <div className="font-display text-xs tracking-widest uppercase text-muted/40 mb-2">Main Project Photo</div>
+                <div className="font-body text-xs text-muted/30 italic">Add hero project photo here</div>
+              </div>
+            )}
+            <div className="absolute top-0 left-0 w-16 h-1 bg-accent" />
+            <div className="absolute top-0 left-0 w-1 h-16 bg-accent" />
+            <div className="absolute bottom-0 right-0 w-16 h-1 bg-accent" />
+            <div className="absolute bottom-0 right-0 w-1 h-16 bg-accent" />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-base border-b border-edge">
+        <div className="max-w-7xl mx-auto px-6 py-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div>
+              <p className="label mb-4">About This Project</p>
+              <p className="font-body text-base text-fore/80 leading-relaxed mb-6">{project.description}</p>
+              <p className="font-body text-sm text-muted leading-relaxed italic border-l-2 border-edge pl-4">
+                Interested in a similar project? Reach out and we can talk through what something like this would look like for your property.
+              </p>
+              <Link href="/contact" className="btn-primary mt-8 inline-block">Discuss a Project</Link>
+            </div>
+            <div>
+              <p className="label mb-4">Project Details</p>
+              <div className="space-y-0 border border-edge">
+                {project.details.map(({ label, value }) => (
+                  <div key={label} className="flex border-b border-edge last:border-b-0">
+                    <div className="w-40 flex-shrink-0 bg-surface px-5 py-4">
+                      <span className="font-display font-semibold text-xs uppercase tracking-widest text-muted">{label}</span>
+                    </div>
+                    <div className="px-5 py-4">
+                      <span className="font-body text-sm text-fore">{value}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-surface border-b border-edge">
+        <div className="max-w-7xl mx-auto px-6 py-20">
+          <p className="label mb-8">Project Photos</p>
+          <ProjectGallery photos={project.photos} />
+        </div>
+      </section>
+
+      <section className="bg-surface-2">
+        <div className="max-w-7xl mx-auto px-6 py-16 text-center">
+          <h2 className="font-display font-800 text-3xl md:text-4xl uppercase tracking-tightest text-fore mb-4">
+            Ready to Start Something Similar?
+          </h2>
+          <p className="font-body text-base text-muted max-w-lg mx-auto mb-8">
+            Every project starts with a conversation. Tell us what you have in mind and we will help you figure out the right approach.
+          </p>
+          <div className="flex gap-4 justify-center">
+            <Link href="/contact" className="btn-primary">Talk to Patrick</Link>
+            <Link href="/services" className="btn-outline">View More Projects</Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
