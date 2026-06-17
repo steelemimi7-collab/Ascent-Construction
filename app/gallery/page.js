@@ -5,24 +5,15 @@ import { useState } from 'react';
 const categories = ['All', 'Residential', 'Mountain Homes', 'Fire Pits', 'Outdoor Living', 'Ranch & Ag', 'Commercial'];
 
 const projects = [
-  { id: 1, name: 'Project Name', type: 'Residential', location: 'Fresno, CA', year: '2024', src: null },
-  { id: 2, name: 'Project Name', type: 'Ranch & Ag', location: 'Madera, CA', year: '2024', src: null },
-  { id: 3, name: 'Project Name', type: 'Outdoor Living', location: 'Clovis, CA', year: '2023', src: null },
-  { id: 4, name: 'Project Name', type: 'Mountain Homes', location: 'Oakhurst, CA', year: '2024', src: null },
-  { id: 5, name: 'Project Name', type: 'Fire Pits', location: 'Clovis, CA', year: '2024', src: null },
-  { id: 6, name: 'Project Name', type: 'Commercial', location: 'Fresno, CA', year: '2023', src: null },
-  { id: 7, name: 'Project Name', type: 'Residential', location: 'Visalia, CA', year: '2023', src: null },
-  { id: 8, name: 'Project Name', type: 'Ranch & Ag', location: 'Madera, CA', year: '2022', src: null },
-  { id: 9, name: 'Project Name', type: 'Outdoor Living', location: 'Fresno, CA', year: '2022', src: null },
-  { id: 10, name: 'Project Name', type: 'Mountain Homes', location: 'Bass Lake, CA', year: '2023', src: null },
-  { id: 11, name: 'Project Name', type: 'Fire Pits', location: 'Madera, CA', year: '2023', src: null },
-  { id: 12, name: 'Project Name', type: 'Commercial', location: 'Visalia, CA', year: '2022', src: null },
   { id: 13, name: 'Shaver Cabin', type: 'Mountain Homes', location: 'Shaver Lake, CA', year: '2025', src: '/ruiz-cabin/ruiz-cabin-lower-13.jpg', thumb: '/thumbs/shaver.jpg' },
   { id: 14, name: 'Horse Barns & Pasture', type: 'Ranch & Ag', location: 'Sanger, CA', year: '2023', src: '/pasture/pasture-02.png', thumb: '/thumbs/pasture.jpg' },
   { id: 15, name: 'Tree House', type: 'Outdoor Living', location: 'Sanger, CA', year: '2024', src: '/treehouse/treehouse-01.jpg', thumb: '/thumbs/treehouse.jpg' },
   { id: 16, name: 'Studio', type: 'Residential', location: 'Sanger, CA', year: '2024', src: '/studio/studio-08.jpg', thumb: '/thumbs/studio.jpg' },
   { id: 17, name: 'Shop', type: 'Ranch & Ag', location: 'Sanger, CA', year: '2024', src: '/shop/shop-01.jpg', thumb: '/thumbs/shop.jpg' },
   { id: 18, name: 'Sport Court', type: 'Outdoor Living', location: 'Sanger, CA', year: '2024', src: '/sport-court/sport-court-05.jpg', thumb: '/thumbs/sport-court.jpg' },
+  { id: 19, name: 'Wine Bar', type: 'Commercial', location: 'Fresno, CA', year: '2024', src: '/wine-bar/wine-bar-02.jpg', thumb: '/thumbs/wine-bar.jpg' },
+  { id: 20, name: 'Nature Fireball', type: 'Fire Pits', location: 'Sanger, CA', year: '2024', src: '/fireball/fireball-01.jpg', thumb: '/fireball/fireball-01.jpg' },
+  { id: 21, name: 'Pool House', type: 'Residential', location: 'Fresno, CA', year: '2024', src: '/pool-house/pool-house-03.jpg', thumb: '/thumbs/pool-house.jpg' },
 ];
 
 export default function Gallery() {

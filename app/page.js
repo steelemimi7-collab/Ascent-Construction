@@ -8,26 +8,12 @@ export const metadata = {
 };
 
 const services = [
-  {
-    title: 'Custom Homes',
-    href: '/services#residential',
-    image: '/images/custom-homes.jpg',
-  },
-  {
-    title: 'Mountain Homes',
-    href: '/services#mountain',
-    image: '/images/mountain-homes.jpg',
-  },
-  {
-    title: 'Outdoor Living',
-    href: '/services#outdoor',
-    image: '/images/outdoor-living.jpg',
-  },
-  {
-    title: 'Ranch & Agricultural',
-    href: '/services#ranch',
-    image: '/images/ranch.jpg',
-  },
+  { title: 'Custom Homes', href: '/services#residential', image: '/thumbs/studio.jpg' },
+  { title: 'Mountain Homes', href: '/services#mountain', image: '/thumbs/shaver.jpg' },
+  { title: 'Outdoor Living', href: '/services#outdoor', image: '/thumbs/treehouse.jpg' },
+  { title: 'Fire Pits', href: '/services#firepit', image: '/fireball/fireball-01.jpg' },
+  { title: 'Ranch & Agricultural', href: '/services#ranch', image: '/thumbs/shop.jpg' },
+  { title: 'Commercial & Specialty', href: '/services#commercial', image: '/thumbs/wine-bar.jpg' },
 ];
 
 const featuredTestimonial = {
@@ -140,7 +126,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
             {services.map(({ title, href, image }) => (
               <Link
                 key={title}
@@ -149,12 +135,13 @@ export default function Home() {
               >
                 {/* Photo */}
                 <div className="relative h-56 md:h-72 bg-surface-2 overflow-hidden">
-                  {/* Placeholder shown until real photo is added */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="font-display text-xs tracking-widest uppercase text-muted/40">Photo</span>
-                  </div>
-                  {/* Swap the div below for an <img> once you have real photos */}
-                  {/* <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" /> */}
+                  {image ? (
+                    <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="font-display text-xs tracking-widest uppercase text-muted/40">Photo</span>
+                    </div>
+                  )}
                   {/* Gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-base/60 to-transparent" />
                   {/* Accent underline on hover */}

@@ -12,9 +12,8 @@ const services = [
     desc: 'Custom homes, cabins, new construction, and large-scale remodels. We work closely with you to build something that fits your vision, your property, and the way you live.',
     detail: 'From site prep and foundation through framing, finishes, and final walkthrough, we manage the full build with personal attention at every stage.',
     projects: [
-      { slug: 'custom-home-fresno', name: 'Custom Home', location: 'Fresno, CA', year: '2024' },
       { slug: 'studio', name: 'Studio', location: 'Sanger, CA', year: '2024', cover: '/thumbs/studio.jpg' },
-      { slug: 'project-4', name: 'Project Name', location: 'Clovis, CA', year: '2023' },
+      { slug: 'pool-house', name: 'Pool House', location: 'Fresno, CA', cover: '/thumbs/pool-house.jpg' },
     ],
   },
   {
@@ -23,8 +22,6 @@ const services = [
     desc: 'Custom homes and cabins built for mountain terrain. Sierra Nevada foothills, wooded lots, and elevated properties that require a different level of planning and expertise.',
     detail: 'Mountain builds come with unique challenges: steep grades, remote access, weather exposure, and site conditions that vary dramatically from flatland construction. We plan for all of it from the start.',
     projects: [
-      { slug: 'project-4', name: 'Project Name', location: 'Oakhurst, CA', year: '2024' },
-      { slug: 'project-5', name: 'Project Name', location: 'Bass Lake, CA', year: '2023' },
       { slug: 'shaver-cabin', name: 'Shaver Cabin', location: 'Shaver Lake, CA', year: '2025', cover: '/thumbs/shaver.jpg' },
     ],
   },
@@ -34,7 +31,6 @@ const services = [
     desc: 'Decks, covered patios, water features, pool houses, game rooms, and sports courts made to be used and enjoyed year-round.',
     detail: 'Whether you want a low-maintenance covered patio or a full resort-style backyard, we design and build it around how you want to live outside.',
     projects: [
-      { slug: 'outdoor-living-clovis', name: 'Outdoor Living Space', location: 'Clovis, CA', year: '2023' },
       { slug: 'treehouse', name: 'Tree House', location: 'Sanger, CA', year: '2024', cover: '/thumbs/treehouse.jpg' },
       { slug: 'sport-court', name: 'Sport Court', location: 'Sanger, CA', year: '2024', cover: '/thumbs/sport-court.jpg' },
     ],
@@ -45,9 +41,7 @@ const services = [
     desc: 'Custom-built fire pits, outdoor fireplaces, and fire features designed to be the centerpiece of your outdoor space.',
     detail: 'We build everything from simple gas fire pits to elaborate stone outdoor fireplaces, integrated seating walls, and full fire-and-water feature combinations.',
     projects: [
-      { slug: 'project-5', name: 'Project Name', location: 'Fresno, CA', year: '2024' },
-      { slug: 'project-6', name: 'Project Name', location: 'Clovis, CA', year: '2024' },
-      { slug: 'project-7', name: 'Project Name', location: 'Madera, CA', year: '2023' },
+      { slug: 'nature-fireball', name: 'Nature Fireball', location: 'Sanger, CA', cover: '/fireball/fireball-01.jpg' },
     ],
   },
   {
@@ -56,7 +50,6 @@ const services = [
     desc: 'Land clearing, fencing, irrigation, shops, pole barns, arenas, and agricultural buildings. Structures that are tough, practical, and built for the long run.',
     detail: 'We understand the demands of working land. Every build is designed to handle real use: livestock, equipment, weather, and the kind of wear that comes with a working property.',
     projects: [
-      { slug: 'ranch-shop-madera', name: 'Ranch Shop & Arena', location: 'Madera, CA', year: '2024' },
       { slug: 'pasture', name: 'Horse Barns & Pasture', location: 'Sanger, CA', year: '2023', cover: '/thumbs/pasture.jpg' },
       { slug: 'shop', name: 'Shop', location: 'Sanger, CA', year: '2024', cover: '/thumbs/shop.jpg' },
     ],
@@ -67,9 +60,7 @@ const services = [
     desc: 'Office tenant improvements, build-outs, barndominiums, demolition, and off-grid systems, with the same focus and craftsmanship applied to every job.',
     detail: "Whether it's a business space or a one-of-a-kind build, we bring the same attention to detail and project management discipline as we do to our residential work.",
     projects: [
-      { slug: 'project-6', name: 'Project Name', location: 'Fresno, CA', year: '2024' },
-      { slug: 'project-7', name: 'Project Name', location: 'Visalia, CA', year: '2023' },
-      { slug: 'project-8', name: 'Project Name', location: 'Bakersfield, CA', year: '2022' },
+      { slug: 'wine-bar', name: 'Wine Bar', location: 'Fresno, CA', cover: '/thumbs/wine-bar.jpg' },
     ],
   },
 ];
