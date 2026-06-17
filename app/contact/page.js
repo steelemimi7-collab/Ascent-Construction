@@ -91,7 +91,7 @@ export default function Contact() {
                   <p className="font-display font-700 text-xs uppercase tracking-widest2 text-muted mb-2">
                     License
                   </p>
-                  <p className="font-body text-base text-fore">[License No.]</p>
+                  <p className="font-body text-base text-fore">#1080865</p>
                 </div>
               </div>
 

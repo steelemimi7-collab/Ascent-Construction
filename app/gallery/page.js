@@ -17,10 +17,12 @@ const projects = [
   { id: 10, name: 'Project Name', type: 'Mountain Homes', location: 'Bass Lake, CA', year: '2023', src: null },
   { id: 11, name: 'Project Name', type: 'Fire Pits', location: 'Madera, CA', year: '2023', src: null },
   { id: 12, name: 'Project Name', type: 'Commercial', location: 'Visalia, CA', year: '2022', src: null },
-  { id: 13, name: 'Shaver Cabin', type: 'Mountain Homes', location: 'Shaver Lake, CA', year: '2025', src: '/ruiz-cabin/ruiz-cabin-lower-13.jpg' },
-  { id: 14, name: 'Horse Barns & Pasture', type: 'Ranch & Ag', location: 'Sanger, CA', year: '2023', src: '/pasture/pasture-02.png' },
-  { id: 15, name: 'Tree House', type: 'Outdoor Living', location: 'Sanger, CA', year: '2024', src: '/treehouse/treehouse-01.jpg' },
-  { id: 16, name: 'Studio', type: 'Residential', location: 'Sanger, CA', year: '2024', src: '/studio/studio-08.jpg' },
+  { id: 13, name: 'Shaver Cabin', type: 'Mountain Homes', location: 'Shaver Lake, CA', year: '2025', src: '/ruiz-cabin/ruiz-cabin-lower-13.jpg', thumb: '/thumbs/shaver.jpg' },
+  { id: 14, name: 'Horse Barns & Pasture', type: 'Ranch & Ag', location: 'Sanger, CA', year: '2023', src: '/pasture/pasture-02.png', thumb: '/thumbs/pasture.jpg' },
+  { id: 15, name: 'Tree House', type: 'Outdoor Living', location: 'Sanger, CA', year: '2024', src: '/treehouse/treehouse-01.jpg', thumb: '/thumbs/treehouse.jpg' },
+  { id: 16, name: 'Studio', type: 'Residential', location: 'Sanger, CA', year: '2024', src: '/studio/studio-08.jpg', thumb: '/thumbs/studio.jpg' },
+  { id: 17, name: 'Shop', type: 'Ranch & Ag', location: 'Sanger, CA', year: '2024', src: '/shop/shop-01.jpg', thumb: '/thumbs/shop.jpg' },
+  { id: 18, name: 'Sport Court', type: 'Outdoor Living', location: 'Sanger, CA', year: '2024', src: '/sport-court/sport-court-05.jpg', thumb: '/thumbs/sport-court.jpg' },
 ];
 
 export default function Gallery() {
@@ -76,7 +78,7 @@ export default function Gallery() {
               >
                 <div className="bg-surface-2 h-52 flex items-center justify-center border-b border-edge relative overflow-hidden">
                   {project.src ? (
-                    <img src={project.src} alt={project.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <img src={project.thumb || project.src} alt={project.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                   ) : (
                     <span className="font-display text-xs tracking-widest uppercase text-muted/40">Project Photo</span>
                   )}
@@ -88,7 +90,7 @@ export default function Gallery() {
                   <div>
                     <p className="label text-[10px] mb-0.5">{project.type}</p>
                     <p className="font-display font-700 text-sm uppercase tracking-widest text-fore">{project.name}</p>
-                    <p className="font-display text-xs tracking-widest text-muted uppercase mt-0.5">{project.location} · {project.year}</p>
+                    <p className="font-display text-xs tracking-widest text-muted uppercase mt-0.5">{project.location}</p>
                   </div>
                   <span className="text-muted group-hover:text-accent transition-colors">⊕</span>
                 </div>
@@ -121,7 +123,7 @@ export default function Gallery() {
             <div className="bg-surface border-t border-edge px-6 py-4">
               <p className="label text-[10px] mb-0.5">{lightbox.type}</p>
               <p className="font-display font-700 text-sm uppercase tracking-widest text-fore">{lightbox.name}</p>
-              <p className="font-display text-xs tracking-widest text-muted uppercase mt-0.5">{lightbox.location} · {lightbox.year}</p>
+              <p className="font-display text-xs tracking-widest text-muted uppercase mt-0.5">{lightbox.location}</p>
             </div>
           </div>
         </div>

@@ -66,7 +66,7 @@ const projects = {
     type: 'Residential Construction',
     location: 'Sanger, CA',
     year: '2024',
-    description: 'A modern detached studio with vaulted wood ceilings, a full kitchen, a lofted sleeping area, and custom finishes throughout. It works as a flexible living and getaway space on the property.',
+    description: 'A detached studio designed as a complete, self-contained retreat and built from the ground up, from foundation and framing through every final detail. Inside, vaulted wood ceilings and walls of windows fill the open space with natural light. The full kitchen is finished with custom cabinetry and terrazzo countertops, flowing into a comfortable living area and a lofted sleeping space tucked above. Warm white oak floors, custom terrazzo, and carefully chosen finishes carry through every corner. The result is a flexible living, guest, or getaway space that feels like a true home in its own right.',
     details: [
       { label: 'Project Type', value: 'Residential Construction' },
       { label: 'Location', value: 'Sanger, CA' },
@@ -91,6 +91,29 @@ const projects = {
       { src: '/studio/studio-13.jpg' },
     ],
   },
+  'sport-court': {
+    title: 'Sport Court',
+    type: 'Outdoor Living & Recreation',
+    location: 'Sanger, CA',
+    year: '2024',
+    description: 'A multi-sport court built for year-round recreation, with a basketball hoop, pickleball and tennis striping, and a full fenced surround. A covered timber-frame pavilion alongside the court offers shade and seating. The whole project was handled from the ground up, from grading and the concrete surround to the finished court coating and lighting for evening play.',
+    details: [
+      { label: 'Project Type', value: 'Outdoor Living & Recreation' },
+      { label: 'Location', value: 'Sanger, CA' },
+      { label: 'Year', value: '2024' },
+      { label: 'Features', value: 'Basketball, pickleball, tennis' },
+      { label: 'Duration', value: '[Project timeline]' },
+    ],
+    hero: '/sport-court/sport-court-05.jpg',
+    photos: [
+      { src: '/sport-court/sport-court-05.jpg' },
+      { src: '/sport-court/sport-court-03.jpg' },
+      { src: '/sport-court/sport-court-01.jpg' },
+      { src: '/sport-court/sport-court-04.jpg' },
+      { src: '/sport-court/sport-court-06.jpg' },
+      { src: '/sport-court/sport-court-02.jpg' },
+    ],
+  },
   'treehouse': {
     title: 'Tree House',
     type: 'Outdoor Living & Recreation',
@@ -110,6 +133,27 @@ const projects = {
       { src: '/treehouse/treehouse-02.jpg' },
       { src: '/treehouse/treehouse-03.jpg' },
       { src: '/treehouse/treehouse-04.jpg' },
+    ],
+  },
+  'shop': {
+    title: 'Shop',
+    type: 'Ranch & Agricultural',
+    location: 'Sanger, CA',
+    year: '2024',
+    description: 'A full ground-up build, taken from bare site to finished structure. The ground floor is a complete working shop with roll-up equipment bays and plenty of room for vehicles, tools, and storage. Upstairs is a finished studio living space with its own private deck that looks out over the property, a comfortable retreat built right above the work below. Every phase was handled in-house: site work and foundation, the steel structure and metal siding, the roofing, windows and doors, all utilities, and the complete interior buildout of the upstairs studio. The result is a hardworking, built-to-last building that does double duty as both a serious shop and a true living space.',
+    details: [
+      { label: 'Project Type', value: 'Ranch & Agricultural' },
+      { label: 'Location', value: 'Sanger, CA' },
+      { label: 'Year', value: '2024' },
+      { label: 'Size', value: '[Square footage]' },
+      { label: 'Duration', value: '[Project timeline]' },
+    ],
+    hero: '/shop/shop-01.jpg',
+    photos: [
+      { src: '/shop/shop-01.jpg' },
+      { src: '/shop/shop-02.jpg' },
+      { src: '/shop/shop-03.jpg' },
+      { src: '/shop/shop-04.jpg' },
     ],
   },
   'pasture': {
@@ -319,7 +363,7 @@ export default function ProjectPage({ params }) {
             {project.title}
           </h1>
           <p className="font-display text-sm tracking-widest uppercase text-muted">
-            {project.location} · {project.year}
+            {project.location}
           </p>
         </div>
       </section>
@@ -357,7 +401,7 @@ export default function ProjectPage({ params }) {
             <div>
               <p className="label mb-4">Project Details</p>
               <div className="space-y-0 border border-edge">
-                {project.details.map(({ label, value }) => (
+                {project.details.filter(({ label }) => !['Year', 'Size', 'Duration'].includes(label)).map(({ label, value }) => (
                   <div key={label} className="flex border-b border-edge last:border-b-0">
                     <div className="w-40 flex-shrink-0 bg-surface px-5 py-4">
                       <span className="font-display font-semibold text-xs uppercase tracking-widest text-muted">{label}</span>

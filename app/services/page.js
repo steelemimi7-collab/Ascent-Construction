@@ -13,7 +13,7 @@ const services = [
     detail: 'From site prep and foundation through framing, finishes, and final walkthrough, we manage the full build with personal attention at every stage.',
     projects: [
       { slug: 'custom-home-fresno', name: 'Custom Home', location: 'Fresno, CA', year: '2024' },
-      { slug: 'studio', name: 'Studio', location: 'Sanger, CA', year: '2024', cover: '/studio/studio-08.jpg' },
+      { slug: 'studio', name: 'Studio', location: 'Sanger, CA', year: '2024', cover: '/thumbs/studio.jpg' },
       { slug: 'project-4', name: 'Project Name', location: 'Clovis, CA', year: '2023' },
     ],
   },
@@ -25,7 +25,7 @@ const services = [
     projects: [
       { slug: 'project-4', name: 'Project Name', location: 'Oakhurst, CA', year: '2024' },
       { slug: 'project-5', name: 'Project Name', location: 'Bass Lake, CA', year: '2023' },
-      { slug: 'shaver-cabin', name: 'Shaver Cabin', location: 'Shaver Lake, CA', year: '2025', cover: '/ruiz-cabin/ruiz-cabin-lower-13.jpg' },
+      { slug: 'shaver-cabin', name: 'Shaver Cabin', location: 'Shaver Lake, CA', year: '2025', cover: '/thumbs/shaver.jpg' },
     ],
   },
   {
@@ -35,8 +35,8 @@ const services = [
     detail: 'Whether you want a low-maintenance covered patio or a full resort-style backyard, we design and build it around how you want to live outside.',
     projects: [
       { slug: 'outdoor-living-clovis', name: 'Outdoor Living Space', location: 'Clovis, CA', year: '2023' },
-      { slug: 'treehouse', name: 'Tree House', location: 'Sanger, CA', year: '2024', cover: '/treehouse/treehouse-01.jpg' },
-      { slug: 'project-8', name: 'Project Name', location: 'Visalia, CA', year: '2022' },
+      { slug: 'treehouse', name: 'Tree House', location: 'Sanger, CA', year: '2024', cover: '/thumbs/treehouse.jpg' },
+      { slug: 'sport-court', name: 'Sport Court', location: 'Sanger, CA', year: '2024', cover: '/thumbs/sport-court.jpg' },
     ],
   },
   {
@@ -57,8 +57,8 @@ const services = [
     detail: 'We understand the demands of working land. Every build is designed to handle real use: livestock, equipment, weather, and the kind of wear that comes with a working property.',
     projects: [
       { slug: 'ranch-shop-madera', name: 'Ranch Shop & Arena', location: 'Madera, CA', year: '2024' },
-      { slug: 'pasture', name: 'Horse Barns & Pasture', location: 'Sanger, CA', year: '2023', cover: '/pasture/pasture-02.png' },
-      { slug: 'project-9', name: 'Project Name', location: 'Hanford, CA', year: '2022' },
+      { slug: 'pasture', name: 'Horse Barns & Pasture', location: 'Sanger, CA', year: '2023', cover: '/thumbs/pasture.jpg' },
+      { slug: 'shop', name: 'Shop', location: 'Sanger, CA', year: '2024', cover: '/thumbs/shop.jpg' },
     ],
   },
   {
@@ -136,7 +136,7 @@ export default function Services() {
                   <div className="p-4 flex items-center justify-between">
                     <div>
                       <p className="font-display font-700 text-sm uppercase tracking-widest text-fore">{name}</p>
-                      <p className="font-display text-xs tracking-widest text-muted uppercase mt-0.5">{location} · {year}</p>
+                      <p className="font-display text-xs tracking-widest text-muted uppercase mt-0.5">{location}</p>
                     </div>
                     <span className="text-muted group-hover:text-accent transition-colors text-lg">→</span>
                   </div>

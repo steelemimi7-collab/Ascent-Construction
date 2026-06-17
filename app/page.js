@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import HeroSlideshow from '@/components/HeroSlideshow';
 
 export const metadata = {
   title: 'Ascent Construction Group | Custom Homes, Ranch Builds & Outdoor Living | Central Valley, CA',
@@ -32,26 +33,16 @@ const services = [
 const featuredTestimonial = {
   name: 'Matt Ruiz',
   detail: 'Shaver Lake, CA · Basement Remodel',
-  qa: [
-    {
-      q: 'What type of project did Ascent Construction complete for you?',
-      a: 'Ascent Construction helped us restore and completely remodel our basement after it was flooded. What started as a stressful situation turned into an opportunity to create a beautiful new living space for our family and friends. In fact, we were so pleased with the basement remodel, Ascent is remodeling the upstairs of our home as well.',
-    },
-    {
-      q: 'What was your experience like working with our team?',
-      a: 'Working with Patrick and the team has been fantastic. They are incredibly creative, listened carefully to our needs and vision, and brought ideas to the table that improved the final result. Throughout the project, they communicated well, paid attention to details, and genuinely cared about delivering a space that exceeded our expectations.',
-    },
-    {
-      q: 'Would you recommend Ascent Construction to others? Why?',
-      a: 'Without hesitation. Out of all the contractors I have worked with over the years, Ascent Construction has done the best job of not only building a beautiful space but actually finishing the project the right way. The last 10% of a project is often the most important and where many contractors fall short. Ascent followed through on every detail and delivered a polished, complete result. That level of trust says everything about our experience.',
-    },
-  ],
+  quote: 'Ascent Construction helped us restore and completely remodel our basement after it was flooded. What started as a stressful situation turned into an opportunity to create a beautiful new living space for our family and friends. In fact, we were so pleased with the basement remodel, Ascent is remodeling the upstairs of our home as well. Working with Patrick and the team has been fantastic. They are incredibly creative, listened carefully to our needs and vision, and brought ideas to the table that improved the final result. Throughout the project, they communicated well, paid attention to details, and genuinely cared about delivering a space that exceeded our expectations. I would recommend them without hesitation. Out of all the contractors I have worked with over the years, Ascent Construction has done the best job of not only building a beautiful space but actually finishing the project the right way. The last 10% of a project is often the most important and where many contractors fall short. Ascent followed through on every detail and delivered a polished, complete result. That level of trust says everything about our experience.',
 };
 
 const projects = [
-  { title: 'Project Name', type: 'Custom Home', location: 'Fresno, CA' },
-  { title: 'Project Name', type: 'Ranch Shop & Arena', location: 'Madera, CA' },
-  { title: 'Project Name', type: 'Outdoor Living Space', location: 'Clovis, CA' },
+  { slug: 'shaver-cabin', title: 'Shaver Cabin', type: 'Mountain Homes', location: 'Shaver Lake, CA', cover: '/thumbs/shaver.jpg' },
+  { slug: 'studio', title: 'Studio', type: 'Residential Construction', location: 'Sanger, CA', cover: '/thumbs/studio.jpg' },
+  { slug: 'shop', title: 'Shop', type: 'Ranch & Agricultural', location: 'Sanger, CA', cover: '/thumbs/shop.jpg' },
+  { slug: 'sport-court', title: 'Sport Court', type: 'Outdoor Living & Recreation', location: 'Sanger, CA', cover: '/thumbs/sport-court.jpg' },
+  { slug: 'treehouse', title: 'Tree House', type: 'Outdoor Living & Recreation', location: 'Sanger, CA', cover: '/thumbs/treehouse.jpg' },
+  { slug: 'pasture', title: 'Horse Barns & Pasture', type: 'Ranch & Agricultural', location: 'Sanger, CA', cover: '/thumbs/pasture.jpg' },
 ];
 
 export default function Home() {
@@ -106,18 +97,9 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right: Project photo */}
+            {/* Right: Project photo slideshow */}
             <div className="hidden lg:block relative self-center lg:col-span-2" style={{ height: '600px', width: '100%' }}>
-              <div className="absolute inset-0 bg-surface-2 flex items-center justify-center">
-                <div className="text-center px-8">
-                  <div className="font-display text-xs tracking-widest uppercase text-muted/40 mb-2">Project Photo</div>
-                  <div className="font-body text-xs text-muted/30 italic">Add a strong project photo here. Drop an image file into the public folder and replace this placeholder.</div>
-                </div>
-                <div className="absolute top-0 left-0 w-16 h-1 bg-accent" />
-                <div className="absolute top-0 left-0 w-1 h-16 bg-accent" />
-                <div className="absolute bottom-0 right-0 w-16 h-1 bg-accent" />
-                <div className="absolute bottom-0 right-0 w-1 h-16 bg-accent" />
-              </div>
+              <HeroSlideshow />
             </div>
 
           </div>
@@ -212,10 +194,10 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {projects.map(({ title, type, location }, i) => (
-              <div key={i} className="card group cursor-pointer overflow-hidden">
-                <div className="bg-surface-2 h-56 flex items-center justify-center border-b border-edge relative overflow-hidden">
-                  <span className="font-display text-xs tracking-widest uppercase text-muted/50">Project Photo</span>
+            {projects.map(({ slug, title, type, location, cover }, i) => (
+              <Link key={i} href={`/projects/${slug}`} className="card group cursor-pointer overflow-hidden hover:border-accent/40 transition-colors">
+                <div className="bg-surface-2 h-56 border-b border-edge relative overflow-hidden">
+                  <img src={cover} alt={title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                   <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/5 transition-colors duration-300" />
                 </div>
                 <div className="p-6">
@@ -223,7 +205,7 @@ export default function Home() {
                   <h3 className="font-display font-700 text-lg uppercase tracking-wide text-fore">{title}</h3>
                   <p className="font-body text-sm text-muted mt-1">{location}</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -238,17 +220,23 @@ export default function Home() {
           </h2>
           <div className="bg-surface border border-edge p-8 md:p-12 relative max-w-4xl">
             <div className="absolute top-6 right-8 font-display text-6xl text-accent/20 leading-none select-none">&ldquo;</div>
-            <div className="space-y-6">
-              {featuredTestimonial.qa.map(({ q, a }, i) => (
-                <div key={i}>
-                  <p className="font-display text-xs uppercase tracking-widest text-accent mb-2">{q}</p>
-                  <p className="font-body text-base text-fore/80 leading-relaxed italic">{a}</p>
-                </div>
-              ))}
-            </div>
+            <p className="font-body text-base text-fore/80 leading-relaxed italic">
+              {featuredTestimonial.quote}
+            </p>
             <div className="border-t border-edge pt-6 mt-8">
               <p className="font-display font-700 text-sm uppercase tracking-widest text-fore">{featuredTestimonial.name}</p>
               <p className="font-display text-xs uppercase tracking-widest text-muted mt-0.5">{featuredTestimonial.detail}</p>
+            </div>
+          </div>
+
+          <div className="bg-surface border border-edge p-8 md:p-12 relative max-w-4xl mt-6">
+            <div className="absolute top-6 right-8 font-display text-6xl text-accent/20 leading-none select-none">&ldquo;</div>
+            <p className="font-body text-base text-fore/80 leading-relaxed italic">
+              Ascent Construction helped me remodel a fifty-year-old barn into a luxury residential living space. Ascent was there from design through completion, always answering questions and making meaningful design recommendations. I wholeheartedly recommend Ascent for even the most complicated construction projects.
+            </p>
+            <div className="border-t border-edge pt-6 mt-8">
+              <p className="font-display font-700 text-sm uppercase tracking-widest text-fore">LtCol James W. Weirick, USMC (Ret.), Esq.</p>
+              <p className="font-display text-xs uppercase tracking-widest text-muted mt-0.5">Barn Conversion</p>
             </div>
           </div>
         </div>
@@ -268,7 +256,7 @@ export default function Home() {
                 <span className="text-accent">On Your Job.</span>
               </h2>
               <p className="font-body text-base text-muted leading-relaxed mb-4">
-                Patrick founded Ascent Construction in 2020 after four decades of hands-on work across residential, ranch, and commercial projects throughout California. That experience is what you are hiring when you call Ascent.
+                Patrick founded Ascent Construction in 2021 after four decades of hands-on work across residential, ranch, and commercial projects throughout California. That experience is what you are hiring when you call Ascent.
               </p>
               <p className="font-body text-base text-muted leading-relaxed mb-8">
                 No middlemen. No handoffs. You get direct access to the person running your job, from the first call to the final walkthrough.

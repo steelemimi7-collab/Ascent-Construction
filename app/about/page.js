@@ -3,7 +3,7 @@ import Link from 'next/link';
 export const metadata = {
   title: 'About | Ascent Construction Group',
   description:
-    'Founded in 2020 by Patrick Steele, backed by 40+ years of hands-on construction experience in the Central Valley.',
+    'Founded in 2021 by Patrick Steele, backed by 40+ years of hands-on construction experience in the Central Valley.',
 };
 
 const values = [
@@ -58,14 +58,14 @@ export default function About() {
                 agricultural, and commercial projects.
               </p>
               <p className="font-body text-base text-muted leading-relaxed">
-                We were founded in 2020 by Patrick Steele, and everything we do is built on more
-                than 30 years of hands-on experience in the construction industry.
+                We were founded in 2021 by Patrick Steele, and everything we do is built on more
+                than 40 years of hands-on experience in the construction industry.
               </p>
             </div>
             <div className="grid grid-cols-1 gap-px bg-edge">
               {[
                 { val: '40+', label: 'Years of Industry Experience' },
-                { val: '2020', label: 'Year Founded' },
+                { val: '2021', label: 'Year Founded' },
                 { val: '100%', label: 'Founder-Led & Personally Involved' },
               ].map(({ val, label }) => (
                 <div key={label} className="bg-surface px-8 py-6 flex items-center gap-6">
@@ -142,9 +142,10 @@ export default function About() {
             Certifications &amp; Licenses
           </h2>
           <div className="bg-surface border border-edge p-8 max-w-xl">
-            <p className="font-body text-sm text-muted italic">
-              License numbers, certifications, and insurance information will be listed here.
-            </p>
+            <div className="flex items-baseline justify-between">
+              <span className="font-display font-semibold text-xs uppercase tracking-widest text-muted">License</span>
+              <span className="font-display text-base text-fore">#1080865</span>
+            </div>
           </div>
         </div>
       </section>
