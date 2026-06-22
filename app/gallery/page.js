@@ -12,7 +12,7 @@ const projects = [
   { id: 17, name: 'Shop', type: 'Ranch & Ag', location: 'Sanger, CA', year: '2024', src: '/shop/shop-01.jpg', thumb: '/thumbs/shop.jpg' },
   { id: 18, name: 'Sport Court', type: 'Outdoor Living', location: 'Sanger, CA', year: '2024', src: '/sport-court/sport-court-05.jpg', thumb: '/thumbs/sport-court.jpg' },
   { id: 19, name: 'Wine Bar', type: 'Commercial', location: 'Fresno, CA', year: '2024', src: '/wine-bar/wine-bar-02.jpg', thumb: '/thumbs/wine-bar.jpg' },
-  { id: 20, name: 'Nature Fireball', type: 'Fire Pits', location: 'Sanger, CA', year: '2024', src: '/fireball/fireball-01.jpg', thumb: '/fireball/fireball-01.jpg' },
+  { id: 20, name: 'Nature Fire Pit', type: 'Fire Pits', location: 'Sanger, CA', year: '2024', src: '/fireball/fireball-01.jpg', thumb: '/fireball/fireball-01.jpg' },
   { id: 21, name: 'Pool House', type: 'Residential', location: 'Fresno, CA', year: '2024', src: '/pool-house/pool-house-03.jpg', thumb: '/thumbs/pool-house.jpg' },
 ];
 

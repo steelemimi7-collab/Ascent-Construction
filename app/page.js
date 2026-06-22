@@ -58,7 +58,7 @@ export default function Home() {
               </h1>
 
               <p className="font-body text-lg text-fore/70 max-w-lg mb-4 leading-relaxed">
-                Patrick Steele has spent 40 years in the field. When you hire Ascent, you get him on your project personally, from the first conversation to the final walkthrough.
+                Forty years of custom builds, so the one you picture is the one you get.
               </p>
               <p className="font-body text-base text-muted max-w-lg mb-10 leading-relaxed">
                 Custom homes, mountain builds, ranch infrastructure, and outdoor living throughout the Central Valley and Sierra foothills.

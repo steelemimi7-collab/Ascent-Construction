@@ -168,7 +168,7 @@ const projects = {
     ],
   },
   'nature-fireball': {
-    title: 'Nature Fireball',
+    title: 'Nature Fire Pit',
     type: 'Fire Pits & Outdoor Fire Features',
     location: 'Sanger, CA',
     description: 'A custom steel fire ball with an intricate nature scene laser-cut into the sphere, from trees and branches to wildlife. Lit from within, the cutwork glows with the fire and casts patterns across the patio after dark. It stands as a true centerpiece for the outdoor space, built as a one-of-a-kind fire feature.',
