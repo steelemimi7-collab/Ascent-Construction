@@ -61,6 +61,27 @@ const projects = {
       { src: null, caption: 'Overall view' },
     ],
   },
+  'barn-to-residence': {
+    title: 'Barn to Residence',
+    type: 'Residential Construction',
+    location: 'Auberry, CA',
+    description: 'A fifty-year-old barn transformed into a luxury residential living space. The original structure was reimagined and rebuilt, keeping the character of the exposed wood ceilings while adding modern finishes, custom built-ins, and comfortable living and sleeping spaces throughout. From design through completion, every part of the conversion was handled with care and attention to detail.',
+    details: [
+      { label: 'Project Type', value: 'Residential Construction' },
+      { label: 'Location', value: 'Auberry, CA' },
+    ],
+    hero: '/barn-to-residence/barn-to-residence-01.jpg',
+    photos: [
+      { src: '/barn-to-residence/barn-to-residence-01.jpg' },
+      { src: '/barn-to-residence/barn-to-residence-06.jpg' },
+      { src: '/barn-to-residence/barn-to-residence-02.jpg' },
+      { src: '/barn-to-residence/barn-to-residence-03.jpg' },
+      { src: '/barn-to-residence/barn-to-residence-04.jpg' },
+      { src: '/barn-to-residence/barn-to-residence-05.jpg' },
+      { src: '/barn-to-residence/barn-to-residence-07.jpg' },
+      { src: '/barn-to-residence/barn-to-residence-08.jpg' },
+    ],
+  },
   'pool-house': {
     title: 'Pool House',
     type: 'Residential Construction',
@@ -183,11 +204,11 @@ const projects = {
   },
   'wine-bar': {
     title: 'Wine Bar',
-    type: 'Commercial & Specialty',
+    type: 'Residential Construction',
     location: 'Fresno, CA',
     description: 'A custom wine bar and lounge built around a showpiece backlit countertop. The illuminated natural stone glows from within, making the bar the centerpiece of the room and the first thing every guest notices. Around it, warm wood ceilings, custom built-in display shelving, bar seating, and comfortable lounge furniture complete the space. The whole build was finished as a one-of-a-kind specialty project, from framing through the final details, with that lit stone countertop as its standout feature.',
     details: [
-      { label: 'Project Type', value: 'Commercial & Specialty' },
+      { label: 'Project Type', value: 'Residential Construction' },
       { label: 'Location', value: 'Fresno, CA' },
     ],
     hero: '/wine-bar/wine-bar-02.jpg',

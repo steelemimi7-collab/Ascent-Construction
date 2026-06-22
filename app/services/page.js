@@ -14,6 +14,8 @@ const services = [
     projects: [
       { slug: 'studio', name: 'Studio', location: 'Sanger, CA', year: '2024', cover: '/thumbs/studio.jpg' },
       { slug: 'pool-house', name: 'Pool House', location: 'Fresno, CA', cover: '/thumbs/pool-house.jpg' },
+      { slug: 'barn-to-residence', name: 'Barn to Residence', location: 'Auberry, CA', cover: '/thumbs/barn-to-residence.jpg' },
+      { slug: 'wine-bar', name: 'Wine Bar', location: 'Fresno, CA', cover: '/thumbs/wine-bar.jpg' },
     ],
   },
   {
@@ -59,9 +61,7 @@ const services = [
     title: 'Commercial & Specialty',
     desc: 'Office tenant improvements, build-outs, barndominiums, demolition, and off-grid systems, with the same focus and craftsmanship applied to every job.',
     detail: "Whether it's a business space or a one-of-a-kind build, we bring the same attention to detail and project management discipline as we do to our residential work.",
-    projects: [
-      { slug: 'wine-bar', name: 'Wine Bar', location: 'Fresno, CA', cover: '/thumbs/wine-bar.jpg' },
-    ],
+    projects: [],
   },
 ];
 
@@ -102,12 +102,15 @@ export default function Services() {
               </div>
               <div className="flex items-end">
                 <p className="font-body text-sm text-muted italic border-l-2 border-accent/30 pl-4 leading-relaxed">
-                  Click any project below to see photos and full project details.
+                  {projects.length > 0
+                    ? 'Click any project below to see photos and full project details.'
+                    : 'Featured project photos coming soon. Reach out to talk about what we can build for you.'}
                 </p>
               </div>
             </div>
 
             {/* Project photo grid */}
+            {projects.length > 0 && (
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {projects.map(({ slug, name, location, year, cover }) => (
                 <Link
@@ -134,6 +137,7 @@ export default function Services() {
                 </Link>
               ))}
             </div>
+            )}
 
           </div>
         </section>

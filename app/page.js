@@ -213,6 +213,7 @@ export default function Home() {
             <div className="border-t border-edge pt-6 mt-8">
               <p className="font-display font-700 text-sm uppercase tracking-widest text-fore">{featuredTestimonial.name}</p>
               <p className="font-display text-xs uppercase tracking-widest text-muted mt-0.5">{featuredTestimonial.detail}</p>
+              <Link href="/projects/shaver-cabin" className="inline-block mt-3 font-display text-xs uppercase tracking-widest text-accent hover:text-accent-light transition-colors">View the Shaver Cabin project →</Link>
             </div>
           </div>
 
@@ -224,6 +225,22 @@ export default function Home() {
             <div className="border-t border-edge pt-6 mt-8">
               <p className="font-display font-700 text-sm uppercase tracking-widest text-fore">LtCol James W. Weirick, USMC (Ret.), Esq.</p>
               <p className="font-display text-xs uppercase tracking-widest text-muted mt-0.5">Barn Conversion</p>
+              <Link href="/projects/barn-to-residence" className="inline-block mt-3 font-display text-xs uppercase tracking-widest text-accent hover:text-accent-light transition-colors">View the Barn to Residence project →</Link>
+            </div>
+          </div>
+
+          <div className="bg-surface border border-edge p-8 md:p-12 relative max-w-4xl mt-6">
+            <div className="absolute top-6 right-8 font-display text-6xl text-accent/20 leading-none select-none">&ldquo;</div>
+            <p className="font-body text-base text-fore/80 leading-relaxed italic">
+              Ascent completed both our bar remodel and the new build of the pool house for us. Working with the Ascent Construction team was an outstanding experience from start to finish. Their professionalism, attention to detail, and commitment to quality were evident throughout the entire project. The team communicated clearly, kept us informed at every stage, and consistently delivered on their promises. What impressed me most was their ability to handle challenges efficiently while maintaining a high standard of workmanship. Everyone on the team was knowledgeable, responsive, and genuinely invested in ensuring the project&apos;s success. They completed the work on schedule, stayed organized, and made the entire process smooth and stress-free. I would highly recommend Ascent Construction to anyone looking for a reliable, skilled, and customer-focused construction company. It was a pleasure working with such a dedicated team, and I would gladly work with them again on future projects. From the initial planning stages through project completion, their team demonstrated strong communication, attention to detail, and a genuine commitment to customer satisfaction. They consistently met expectations, addressed questions and concerns promptly, and delivered results that reflected a high level of craftsmanship. Their ability to stay organized, maintain timelines, and provide a smooth, stress-free experience made them stand out. Anyone looking for a trustworthy construction partner can feel confident choosing Ascent Construction.
+            </p>
+            <div className="border-t border-edge pt-6 mt-8">
+              <p className="font-display font-700 text-sm uppercase tracking-widest text-fore">Alisa Emmett</p>
+              <p className="font-display text-xs uppercase tracking-widest text-muted mt-0.5">Fresno, CA · Wine Bar &amp; Pool House</p>
+              <div className="flex flex-wrap gap-x-6 gap-y-1 mt-3">
+                <Link href="/projects/wine-bar" className="font-display text-xs uppercase tracking-widest text-accent hover:text-accent-light transition-colors">View the Wine Bar →</Link>
+                <Link href="/projects/pool-house" className="font-display text-xs uppercase tracking-widest text-accent hover:text-accent-light transition-colors">View the Pool House →</Link>
+              </div>
             </div>
           </div>
         </div>
