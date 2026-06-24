@@ -15,6 +15,7 @@ const projects = [
   { id: 20, name: 'Nature Fire Pit', type: 'Fire Pits', location: 'Sanger, CA', year: '2024', src: '/fireball/fireball-01.jpg', thumb: '/fireball/fireball-01.jpg' },
   { id: 21, name: 'Pool House', type: 'Residential', location: 'Fresno, CA', year: '2024', src: '/pool-house/pool-house-03.jpg', thumb: '/thumbs/pool-house.jpg' },
   { id: 23, name: 'Barn to Residence', type: 'Residential', location: 'Auberry, CA', year: '2024', src: '/barn-to-residence/barn-to-residence-01.jpg', thumb: '/thumbs/barn-to-residence.jpg' },
+  { id: 24, name: 'Office', type: 'Commercial', location: 'Fresno, CA', year: '2024', src: '/office/office-01.jpg', thumb: '/thumbs/office.jpg' },
 ];
 
 export default function Gallery() {

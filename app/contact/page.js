@@ -72,10 +72,10 @@ export default function Contact() {
                     Email
                   </p>
                   <a
-                    href="mailto:info@ascentconstructiongroup.com"
+                    href="mailto:pat@ascentconstructiongroup.com"
                     className="font-display font-700 text-xl text-fore hover:text-accent transition-colors"
                   >
-                    [Email Address]
+                    pat@ascentconstructiongroup.com
                   </a>
                 </div>
                 <div>

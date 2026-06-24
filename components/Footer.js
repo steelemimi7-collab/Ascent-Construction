@@ -75,8 +75,8 @@ export default function Footer() {
               </div>
               <div>
                 <span className="font-display font-semibold text-xs uppercase tracking-widest text-fore/50 block mb-0.5">Email</span>
-                <a href="mailto:info@ascentconstructiongroup.com" className="text-fore hover:text-accent transition-colors">
-                  [Email Address]
+                <a href="mailto:pat@ascentconstructiongroup.com" className="text-fore hover:text-accent transition-colors">
+                  pat@ascentconstructiongroup.com
                 </a>
               </div>
               <div>
