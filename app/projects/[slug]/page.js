@@ -70,8 +70,9 @@ const projects = {
       { label: 'Project Type', value: 'Residential Construction' },
       { label: 'Location', value: 'Auberry, CA' },
     ],
-    hero: '/barn-to-residence/barn-to-residence-01.jpg',
+    hero: '/barn-to-residence/barn-to-residence-exterior.jpg',
     photos: [
+      { src: '/barn-to-residence/barn-to-residence-exterior.jpg' },
       { src: '/barn-to-residence/barn-to-residence-01.jpg' },
       { src: '/barn-to-residence/barn-to-residence-06.jpg' },
       { src: '/barn-to-residence/barn-to-residence-02.jpg' },
@@ -536,7 +537,7 @@ export default function ProjectPage({ params }) {
       <section className="bg-surface border-b border-edge">
         <div className="max-w-7xl mx-auto px-6 py-20">
           <p className="label mb-8">Project Photos</p>
-          <ProjectGallery photos={project.photos} />
+          <ProjectGallery photos={project.photos} title={project.title} />
         </div>
       </section>
 

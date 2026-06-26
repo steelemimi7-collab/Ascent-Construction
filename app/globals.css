@@ -10,6 +10,32 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Visible focus outline for keyboard users (accessibility) */
+*:focus-visible {
+  outline: 3px solid #e0b257;
+  outline-offset: 2px;
+}
+
+/* Skip-to-content link: hidden until focused via keyboard */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 1000;
+  background-color: #c8973a;
+  color: #0c0b09;
+  padding: 0.75rem 1.25rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
 body {
   background-color: #0c0b09;
   color: #f5f1e8;

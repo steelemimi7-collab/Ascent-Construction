@@ -3,8 +3,8 @@
 import { useState, useEffect } from 'react';
 
 const images = [
-  '/hero/pool-house.jpg',
-  '/hero/treehouse.jpg',
+  { src: '/hero/pool-house.jpg', alt: 'Custom pool house exterior built by Ascent Construction' },
+  { src: '/hero/treehouse.jpg', alt: 'Custom elevated tree house built by Ascent Construction' },
 ];
 
 export default function HeroSlideshow() {
@@ -17,11 +17,12 @@ export default function HeroSlideshow() {
 
   return (
     <div className="absolute inset-0 overflow-hidden">
-      {images.map((src, i) => (
+      {images.map((image, i) => (
         <img
-          key={src}
-          src={src}
-          alt=""
+          key={image.src}
+          src={image.src}
+          alt={image.alt}
+          aria-hidden={i === idx ? 'false' : 'true'}
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === idx ? 'opacity-100' : 'opacity-0'}`}
         />
       ))}

@@ -20,8 +20,9 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="font-body antialiased">
+        <a href="#main-content" className="skip-link">Skip to main content</a>
         <Navbar />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
       </body>
     </html>

@@ -98,9 +98,14 @@ export default function Footer() {
           <p className="font-display text-xs tracking-widest uppercase text-muted">
             © {new Date().getFullYear()} Ascent Construction Group Inc. — All rights reserved
           </p>
-          <p className="font-display text-xs tracking-widest uppercase text-muted">
-            Serving Central Valley · Shaver Lake · Huntington Lake
-          </p>
+          <div className="flex items-center gap-5">
+            <Link href="/accessibility" className="font-display text-xs tracking-widest uppercase text-muted hover:text-accent transition-colors">
+              Accessibility
+            </Link>
+            <p className="font-display text-xs tracking-widest uppercase text-muted">
+              Serving Central Valley · Shaver Lake · Huntington Lake
+            </p>
+          </div>
         </div>
       </div>
     </footer>

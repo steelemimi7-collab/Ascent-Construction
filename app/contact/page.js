@@ -124,10 +124,11 @@ export default function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="font-display font-semibold text-xs uppercase tracking-widest text-muted block mb-2">
+                      <label htmlFor="contact-name" className="font-display font-semibold text-xs uppercase tracking-widest text-muted block mb-2">
                         Name <span className="text-accent">*</span>
                       </label>
                       <input
+                        id="contact-name"
                         type="text"
                         name="name"
                         required
@@ -138,10 +139,11 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <label className="font-display font-semibold text-xs uppercase tracking-widest text-muted block mb-2">
+                      <label htmlFor="contact-phone" className="font-display font-semibold text-xs uppercase tracking-widest text-muted block mb-2">
                         Phone <span className="text-accent">*</span>
                       </label>
                       <input
+                        id="contact-phone"
                         type="tel"
                         name="phone"
                         required
@@ -154,10 +156,11 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="font-display font-semibold text-xs uppercase tracking-widest text-muted block mb-2">
+                    <label htmlFor="contact-email" className="font-display font-semibold text-xs uppercase tracking-widest text-muted block mb-2">
                       Email Address
                     </label>
                     <input
+                      id="contact-email"
                       type="email"
                       name="email"
                       value={form.email}
@@ -168,10 +171,11 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="font-display font-semibold text-xs uppercase tracking-widest text-muted block mb-2">
+                    <label htmlFor="contact-projectType" className="font-display font-semibold text-xs uppercase tracking-widest text-muted block mb-2">
                       Project Type
                     </label>
                     <select
+                      id="contact-projectType"
                       name="projectType"
                       value={form.projectType}
                       onChange={handleChange}
@@ -187,10 +191,11 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="font-display font-semibold text-xs uppercase tracking-widest text-muted block mb-2">
+                    <label htmlFor="contact-message" className="font-display font-semibold text-xs uppercase tracking-widest text-muted block mb-2">
                       Tell Us About Your Project
                     </label>
                     <textarea
+                      id="contact-message"
                       name="message"
                       rows={5}
                       value={form.message}

@@ -8,12 +8,12 @@ export const metadata = {
 };
 
 const services = [
-  { title: 'Custom Homes', href: '/services#residential', image: '/thumbs/studio.jpg' },
+  { title: 'Custom Homes', href: '/services#residential', image: '/thumbs/pool-house.jpg' },
   { title: 'Mountain Homes', href: '/services#mountain', image: '/thumbs/shaver.jpg' },
   { title: 'Outdoor Living', href: '/services#outdoor', image: '/thumbs/treehouse.jpg' },
   { title: 'Fire Pits', href: '/services#firepit', image: '/fireball/fireball-01.jpg' },
   { title: 'Ranch & Agricultural', href: '/services#ranch', image: '/thumbs/shop.jpg' },
-  { title: 'Commercial & Specialty', href: '/services#commercial', image: '/thumbs/wine-bar.jpg' },
+  { title: 'Commercial & Specialty', href: '/services#commercial', image: '/thumbs/office.jpg' },
 ];
 
 const featuredTestimonial = {

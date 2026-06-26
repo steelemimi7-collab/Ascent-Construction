@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const categories = ['All', 'Residential', 'Mountain Homes', 'Fire Pits', 'Outdoor Living', 'Ranch & Ag', 'Commercial'];
 
@@ -14,7 +14,7 @@ const projects = [
   { id: 19, name: 'Wine Bar', type: 'Residential', location: 'Fresno, CA', year: '2024', src: '/wine-bar/wine-bar-02.jpg', thumb: '/thumbs/wine-bar.jpg' },
   { id: 20, name: 'Nature Fire Pit', type: 'Fire Pits', location: 'Sanger, CA', year: '2024', src: '/fireball/fireball-01.jpg', thumb: '/fireball/fireball-01.jpg' },
   { id: 21, name: 'Pool House', type: 'Residential', location: 'Fresno, CA', year: '2024', src: '/pool-house/pool-house-03.jpg', thumb: '/thumbs/pool-house.jpg' },
-  { id: 23, name: 'Barn to Residence', type: 'Residential', location: 'Auberry, CA', year: '2024', src: '/barn-to-residence/barn-to-residence-01.jpg', thumb: '/thumbs/barn-to-residence.jpg' },
+  { id: 23, name: 'Barn to Residence', type: 'Residential', location: 'Auberry, CA', year: '2024', src: '/barn-to-residence/barn-to-residence-exterior.jpg', thumb: '/thumbs/barn-to-residence.jpg' },
   { id: 24, name: 'Office', type: 'Commercial', location: 'Fresno, CA', year: '2024', src: '/office/office-01.jpg', thumb: '/thumbs/office.jpg' },
 ];
 
@@ -23,6 +23,14 @@ export default function Gallery() {
   const [lightbox, setLightbox] = useState(null);
 
   const filtered = selected === 'All' ? projects : projects.filter(p => p.type === selected);
+
+  // Close the lightbox with the Escape key
+  useEffect(() => {
+    if (!lightbox) return;
+    const onKey = (e) => { if (e.key === 'Escape') setLightbox(null); };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [lightbox]);
 
   return (
     <>
@@ -96,12 +104,17 @@ export default function Gallery() {
       {/* Lightbox */}
       {lightbox && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Enlarged photo: ${lightbox.name}`}
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
           onClick={() => setLightbox(null)}
         >
           <div className="relative max-w-4xl w-full" onClick={e => e.stopPropagation()}>
             <button
               onClick={() => setLightbox(null)}
+              aria-label="Close enlarged photo"
+              autoFocus
               className="absolute -top-10 right-0 font-display text-xs tracking-widest uppercase text-white/60 hover:text-white"
             >
               Close ✕
