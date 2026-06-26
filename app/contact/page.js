@@ -10,8 +10,13 @@ const projectTypes = [
   'Other / Not Sure Yet',
 ];
 
+// Formspree endpoint — replace YOUR_FORM_ID with the ID from your free Formspree form.
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
   const [form, setForm] = useState({
     name: '',
     phone: '',
@@ -20,10 +25,26 @@ export default function Contact() {
     message: '',
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // TODO: wire up form submission (e.g. Resend, Formspree, custom API route)
-    setSubmitted(true);
+    setSending(true);
+    setError('');
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        setError('Sorry, something went wrong sending your message. Please call us at (559) 790-5400.');
+      }
+    } catch {
+      setError('Sorry, something went wrong sending your message. Please call us at (559) 790-5400.');
+    } finally {
+      setSending(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -205,9 +226,15 @@ export default function Contact() {
                     />
                   </div>
 
-                  <button type="submit" className="btn-primary w-full text-center">
-                    Send Message
+                  <button type="submit" disabled={sending} className="btn-primary w-full text-center disabled:opacity-60 disabled:cursor-not-allowed">
+                    {sending ? 'Sending…' : 'Send Message'}
                   </button>
+
+                  {error && (
+                    <p role="alert" className="font-body text-sm text-accent-light leading-relaxed">
+                      {error}
+                    </p>
+                  )}
 
                   <p className="font-body text-xs text-muted/60 leading-relaxed">
                     We&apos;ll respond as soon as possible, usually within one business day.
