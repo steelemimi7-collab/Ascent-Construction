@@ -339,7 +339,7 @@ const projects = {
     type: 'Mountain Homes',
     location: 'Shaver Lake, CA',
     year: '2025',
-    hero: '/ruiz-cabin/ruiz-cabin-lower-13.jpg',
+    hero: '/ruiz-cabin/ruiz-cabin-exterior.jpg',
     description: 'A full interior remodel of a mountain cabin in Shaver Lake after significant flood and water damage. We rebuilt the inside from the studs out, restoring the living spaces, bedrooms, and bathrooms with durable, high-quality finishes throughout. The result is a warm, move-in ready mountain retreat that feels brand new.',
     details: [
       { label: 'Project Type', value: 'Mountain Home' },
@@ -349,6 +349,7 @@ const projects = {
       { label: 'Duration', value: '[Project timeline]' },
     ],
     photos: [
+      { src: '/ruiz-cabin/ruiz-cabin-exterior.jpg' },
       { src: '/ruiz-cabin/ruiz-cabin-lower-14.jpg' },
       { src: '/ruiz-cabin/ruiz-cabin-lower-01.jpg' },
       { src: '/ruiz-cabin/ruiz-cabin-lower-02.jpg' },

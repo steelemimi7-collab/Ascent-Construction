@@ -4,7 +4,7 @@ import HeroSlideshow from '@/components/HeroSlideshow';
 export const metadata = {
   title: 'Ascent Construction Group | Custom Homes, Ranch Builds & Outdoor Living | Central Valley, CA',
   description:
-    'Patrick Steele brings 40+ years of hands-on construction experience to every project. Custom homes, mountain builds, ranch infrastructure, and outdoor living throughout the Central Valley and Sierra foothills.',
+    'Patrick Steele brings 40+ years of hands-on construction experience to every project. From custom homes and mountain cabins to barns, sport courts, and outdoor living spaces, Ascent Construction manages every project with craftsmanship, clear communication, and attention to detail.',
 };
 
 const services = [
@@ -61,7 +61,7 @@ export default function Home() {
                 Forty years of custom builds, so the one you picture is the one you get.
               </p>
               <p className="font-body text-base text-muted max-w-lg mb-10 leading-relaxed">
-                Custom homes, mountain builds, ranch infrastructure, and outdoor living throughout the Central Valley and Sierra foothills.
+                From custom homes and mountain cabins to barns, sport courts, and outdoor living spaces, Ascent Construction manages every project with craftsmanship, clear communication, and attention to detail.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-12">

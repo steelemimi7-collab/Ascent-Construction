@@ -5,7 +5,7 @@ import { useState } from 'react';
 const categories = ['All', 'Residential', 'Mountain Homes', 'Fire Pits', 'Outdoor Living', 'Ranch & Ag', 'Commercial'];
 
 const projects = [
-  { id: 13, name: 'Shaver Cabin', type: 'Mountain Homes', location: 'Shaver Lake, CA', year: '2025', src: '/ruiz-cabin/ruiz-cabin-lower-13.jpg', thumb: '/thumbs/shaver.jpg' },
+  { id: 13, name: 'Shaver Cabin', type: 'Mountain Homes', location: 'Shaver Lake, CA', year: '2025', src: '/ruiz-cabin/ruiz-cabin-exterior.jpg', thumb: '/thumbs/shaver.jpg' },
   { id: 14, name: 'Horse Barns & Pasture', type: 'Ranch & Ag', location: 'Sanger, CA', year: '2023', src: '/pasture/pasture-02.png', thumb: '/thumbs/pasture.jpg' },
   { id: 15, name: 'Tree House', type: 'Outdoor Living', location: 'Sanger, CA', year: '2024', src: '/treehouse/treehouse-01.jpg', thumb: '/thumbs/treehouse.jpg' },
   { id: 16, name: 'Studio', type: 'Residential', location: 'Sanger, CA', year: '2024', src: '/studio/studio-08.jpg', thumb: '/thumbs/studio.jpg' },
