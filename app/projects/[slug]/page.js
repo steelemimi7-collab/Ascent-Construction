@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import ProjectGallery from '@/components/ProjectGallery';
 import HeroPhoto from '@/components/HeroPhoto';
+import { buildMetadata } from '@/lib/seo';
 
 const projects = {
   'custom-home-fresno': {
@@ -451,6 +452,33 @@ const projects = {
 
 export function generateStaticParams() {
   return Object.keys(projects).map((slug) => ({ slug }));
+}
+
+export function generateMetadata({ params }) {
+  const project = projects[params.slug];
+  const path = `/projects/${params.slug}`;
+
+  if (!project) {
+    return buildMetadata({
+      title: 'Project Not Found | Ascent Construction Group',
+      description:
+        "This project could not be found. Browse our completed work across California's Central Valley and the Sierra.",
+      path,
+    });
+  }
+
+  // Trim the project description to a clean ~150 character meta description.
+  const raw = project.description || '';
+  const description =
+    raw.length > 155 ? raw.slice(0, 152).replace(/\s+\S*$/, '') : raw;
+
+  return buildMetadata({
+    title: `${project.title} in ${project.location} | Ascent Construction`,
+    description,
+    path,
+    image: project.hero ? `/og/${params.slug}.png` : undefined,
+    type: 'article',
+  });
 }
 
 export default function ProjectPage({ params }) {

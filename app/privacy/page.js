@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import { PHONE, PHONE_TEL } from '@/lib/site';
+import { buildMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: 'Privacy Policy | Ascent Construction Group',
+export const metadata = buildMetadata({
+  title: 'Privacy Policy | Ascent Construction Group, Central Valley',
   description:
-    'How Ascent Construction Group collects, uses, and protects the information you share through our website.',
-};
+    'How Ascent Construction Group collects, uses, and protects the information you share through our Central Valley construction website and contact form.',
+  path: '/privacy',
+});
 
 export default function Privacy() {
   return (

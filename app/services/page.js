@@ -1,9 +1,12 @@
 import Link from 'next/link';
+import { buildMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: 'Services | Ascent Construction Group',
-  description: 'Custom homes, ranch builds, outdoor living, and commercial construction throughout the Central Valley.',
-};
+export const metadata = buildMetadata({
+  title: 'Construction Services | Central Valley, California | Ascent',
+  description:
+    "Custom homes, mountain builds, ranch and agricultural structures, outdoor living, fire features, and commercial work across California's Central Valley.",
+  path: '/services',
+});
 
 const services = [
   {

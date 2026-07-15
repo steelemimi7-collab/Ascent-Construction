@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import HeroSlideshow from '@/components/HeroSlideshow';
+import { buildMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: 'Ascent Construction Group | Custom Homes, Ranch Builds & Outdoor Living | Central Valley, CA',
+export const metadata = buildMetadata({
+  title: 'Central Valley Custom Home Builder | Ascent Construction',
   description:
-    'Patrick Steele brings 40+ years of hands-on construction experience to every project. From custom homes and mountain cabins to barns, sport courts, and outdoor living spaces, Ascent Construction manages every project with craftsmanship, clear communication, and attention to detail.',
-};
+    "Owner-led construction serving California's Central Valley. Custom homes, mountain cabins, ranch buildings, outdoor living, fire features, and more.",
+  path: '/',
+});
 
 const services = [
   { title: 'Custom Homes', href: '/services#residential', image: '/thumbs/pool-house.jpg' },
@@ -253,6 +255,17 @@ export default function Home() {
               <p className="font-display font-700 text-sm uppercase tracking-widest text-fore">Marie Dibona</p>
               <p className="font-display text-xs uppercase tracking-widest text-muted mt-0.5">Horse Tack Room, Hay Barn &amp; Shelter</p>
               <Link href="/projects/pasture" className="inline-block mt-3 font-display text-xs uppercase tracking-widest text-accent hover:text-accent-light transition-colors">View the Horse Barns &amp; Pasture project →</Link>
+            </div>
+          </div>
+
+          <div className="bg-surface border border-edge p-8 md:p-12 relative max-w-4xl mt-6">
+            <div className="absolute top-6 right-8 font-display text-6xl text-accent/20 leading-none select-none">&ldquo;</div>
+            <p className="font-body text-base text-fore/80 leading-relaxed italic">
+              Ascent construction and its owner Pat Steele are a pleasure to deal with. During the past several years. I have used Pat on a variety of projects ranging from relatively simple to complex buildings. I am pleased to say he has executed each and every one in a professional manner and has stayed on the job until it is complete ensuring his customer is 100% satisfied. Additionally Pat is a true problem solver with an eye for detail, all while maintaining superb communication and coupled with clear and concise billing during the process. Pat&apos;s professional approach begins the moment you meet him and is maintained throughout the execution of the project. He and his team have been a delight to deal with. We will be using Ascent Construction again for our building needs.
+            </p>
+            <div className="border-t border-edge pt-6 mt-8">
+              <p className="font-display font-700 text-sm uppercase tracking-widest text-fore">Peter Herzog</p>
+              <p className="font-display text-xs uppercase tracking-widest text-muted mt-0.5">Repeat Client</p>
             </div>
           </div>
         </div>

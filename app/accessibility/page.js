@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import { PHONE, PHONE_TEL } from '@/lib/site';
+import { buildMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: 'Accessibility | Ascent Construction Group',
+export const metadata = buildMetadata({
+  title: 'Accessibility | Ascent Construction Group, Central Valley',
   description:
-    'Ascent Construction Group is committed to making our website accessible to everyone, including people with disabilities.',
-};
+    "Ascent Construction Group works to keep our website accessible to everyone, including people with disabilities, across California's Central Valley.",
+  path: '/accessibility',
+});
 
 export default function Accessibility() {
   return (

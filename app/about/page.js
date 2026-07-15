@@ -1,10 +1,12 @@
 import Link from 'next/link';
+import { buildMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: 'About | Ascent Construction Group',
+export const metadata = buildMetadata({
+  title: 'About Ascent Construction | Central Valley Home Builder',
   description:
-    'Founded in 2021 by Patrick Steele, backed by 40+ years of hands-on construction experience in the Central Valley.',
-};
+    "Meet Patrick Steele and Ascent Construction Group, an owner-led builder serving California's Central Valley with 40 plus years of hands-on experience.",
+  path: '/about',
+});
 
 const values = [
   {
