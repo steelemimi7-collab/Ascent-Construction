@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { PHONE, PHONE_TEL } from '@/lib/site';
 
 export const metadata = {
   title: 'Privacy Policy | Ascent Construction Group',
@@ -83,8 +84,8 @@ export default function Privacy() {
               <p>Ascent Construction Group Inc.</p>
               <p>
                 Phone:{' '}
-                <a href="tel:5597905400" className="text-accent hover:text-accent-light transition-colors">
-                  (559) 790-5400
+                <a href={`tel:${PHONE_TEL}`} className="text-accent hover:text-accent-light transition-colors">
+                  {PHONE}
                 </a>
               </p>
               <p>

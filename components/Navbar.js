@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import { PHONE, PHONE_TEL } from '@/lib/site';
 
 const links = [
   { href: '/', label: 'Home' },
@@ -39,8 +40,8 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden md:flex items-center gap-6">
-          <a href="tel:5597905400" className="font-display font-semibold text-xs tracking-widest text-white/70 hover:text-accent transition-colors uppercase">
-            (559) 790-5400
+          <a href={`tel:${PHONE_TEL}`} className="font-display font-semibold text-xs tracking-widest text-white/70 hover:text-accent transition-colors uppercase">
+            {PHONE}
           </a>
           <Link href="/contact" className="btn-primary text-xs py-2.5 px-5">
             Get a Quote
@@ -63,7 +64,7 @@ export default function Navbar() {
                 {label}
               </Link>
             ))}
-            <a href="tel:5597905400" className="font-display text-sm tracking-widest text-muted uppercase mt-2">(559) 790-5400</a>
+            <a href={`tel:${PHONE_TEL}`} className="font-display text-sm tracking-widest text-muted uppercase mt-2">{PHONE}</a>
           </nav>
         </div>
       )}

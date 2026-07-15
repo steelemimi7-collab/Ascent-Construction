@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { PHONE, PHONE_TEL } from '@/lib/site';
 
 export const metadata = {
   title: 'Accessibility | Ascent Construction Group',
@@ -69,8 +70,8 @@ export default function Accessibility() {
             <div className="mt-4 space-y-1 font-body text-base text-fore">
               <p>
                 Phone:{' '}
-                <a href="tel:5597905400" className="text-accent hover:text-accent-light transition-colors">
-                  (559) 790-5400
+                <a href={`tel:${PHONE_TEL}`} className="text-accent hover:text-accent-light transition-colors">
+                  {PHONE}
                 </a>
               </p>
               <p>

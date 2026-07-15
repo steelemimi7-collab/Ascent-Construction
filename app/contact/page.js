@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { PHONE, PHONE_TEL } from '@/lib/site';
 
 const projectTypes = [
   'Residential Construction',
@@ -9,10 +10,6 @@ const projectTypes = [
   'Commercial & Specialty',
   'Other / Not Sure Yet',
 ];
-
-// Web3Forms — submissions are emailed to the connected account (steelemimi7@gmail.com).
-const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
-const WEB3FORMS_ACCESS_KEY = 'c9f3bf02-0066-44e1-a007-cc344bae11d3';
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -24,6 +21,7 @@ export default function Contact() {
     email: '',
     projectType: '',
     message: '',
+    company: '', // honeypot (kept empty by real people)
   });
 
   const handleSubmit = async (e) => {
@@ -31,19 +29,15 @@ export default function Contact() {
     setSending(true);
     setError('');
     try {
-      const res = await fetch(WEB3FORMS_ENDPOINT, {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_ACCESS_KEY,
-          subject: 'New message from Ascent Construction website',
-          ...form,
-        }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
       });
       if (res.ok) {
         setSubmitted(true);
       } else {
-        setError('Sorry, something went wrong sending your message. Please call us at (559) 790-5400.');
+        setError(`Sorry, something went wrong sending your message. Please call us at ${PHONE}.`);
       }
     } catch {
       setError('Sorry, something went wrong sending your message. Please call us at (559) 790-5400.');
@@ -87,10 +81,10 @@ export default function Contact() {
                     Phone
                   </p>
                   <a
-                    href="tel:5597905400"
+                    href={`tel:${PHONE_TEL}`}
                     className="font-display font-800 text-3xl text-fore hover:text-accent transition-colors"
                   >
-                    (559) 790-5400
+                    {PHONE}
                   </a>
                 </div>
                 <div>
@@ -148,6 +142,20 @@ export default function Contact() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  {/* Honeypot: hidden from people, catches bots. Do not remove. */}
+                  <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}>
+                    <label htmlFor="contact-company">Company</label>
+                    <input
+                      id="contact-company"
+                      type="text"
+                      name="company"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={form.company}
+                      onChange={handleChange}
+                    />
+                  </div>
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label htmlFor="contact-name" className="font-display font-semibold text-xs uppercase tracking-widest text-muted block mb-2">

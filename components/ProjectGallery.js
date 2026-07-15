@@ -55,7 +55,7 @@ export default function ProjectGallery({ photos, title = 'Project' }) {
         ))}
       </div>
 
-      {/* Lightbox — full photo, nothing cropped */}
+      {/* Lightbox: full photo, nothing cropped */}
       {lightbox && (
         <div
           role="dialog"

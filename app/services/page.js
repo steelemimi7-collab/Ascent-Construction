@@ -41,7 +41,7 @@ const services = [
     id: 'firepit',
     title: 'Fire Pits & Outdoor Fire Features',
     desc: 'Custom-built fire pits, outdoor fireplaces, and fire features designed to be the centerpiece of your outdoor space.',
-    detail: 'We build everything from simple gas fire pits to elaborate stone outdoor fireplaces, integrated seating walls, and full fire-and-water feature combinations.',
+    detail: 'We build everything from classic gas fire pits to elaborate stone outdoor fireplaces, integrated seating walls, and full fire-and-water feature combinations.',
     projects: [
       { slug: 'nature-fireball', name: 'Nature Fire Pit', location: 'Sanger, CA', cover: '/fireball/fireball-01.jpg' },
     ],

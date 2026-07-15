@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { PHONE, PHONE_TEL } from '@/lib/site';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -19,15 +20,15 @@ export default function Footer() {
               Ready to build?
             </p>
             <p className="font-body text-base/80 text-sm mt-1">
-              Call us or send a message — we&apos;ll get back to you promptly.
+              Call us or send a message, and we&apos;ll get back to you promptly.
             </p>
           </div>
           <div className="flex items-center gap-4 flex-wrap">
             <a
-              href="tel:5597905400"
+              href={`tel:${PHONE_TEL}`}
               className="font-display font-700 text-base text-base text-lg tracking-wide hover:underline"
             >
-              (559) 790-5400
+              {PHONE}
             </a>
             <Link
               href="/contact"
@@ -69,8 +70,8 @@ export default function Footer() {
             <div className="flex flex-col gap-3 font-body text-sm text-muted">
               <div>
                 <span className="font-display font-semibold text-xs uppercase tracking-widest text-fore/50 block mb-0.5">Phone</span>
-                <a href="tel:5597905400" className="text-fore hover:text-accent transition-colors">
-                  (559) 790-5400
+                <a href={`tel:${PHONE_TEL}`} className="text-fore hover:text-accent transition-colors">
+                  {PHONE}
                 </a>
               </div>
               <div>
@@ -96,7 +97,7 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="font-display text-xs tracking-widest uppercase text-muted">
-            © {new Date().getFullYear()} Ascent Construction Group Inc. — All rights reserved
+            © {new Date().getFullYear()} Ascent Construction Group Inc. All rights reserved
           </p>
           <div className="flex items-center gap-5">
             <Link href="/privacy" className="font-display text-xs tracking-widest uppercase text-muted hover:text-accent transition-colors">
