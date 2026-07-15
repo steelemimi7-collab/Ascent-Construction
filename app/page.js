@@ -243,6 +243,17 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          <div className="bg-surface border border-edge p-8 md:p-12 relative max-w-4xl mt-6">
+            <div className="absolute top-6 right-8 font-display text-6xl text-accent/20 leading-none select-none">&ldquo;</div>
+            <p className="font-body text-base text-fore/80 leading-relaxed italic">
+              Ascent completed the new construction of our horse tack room, hay barn, and covered horse house. They were very professional from the start. They understood our vision and made sure the finished product not only met our initial expectations, but went beyond. They oversaw every aspect of each building with a highly detail-oriented perspective, and we felt seen and heard throughout the experience. I love working with Ascent Construction because they do exactly what they say they are going to do. They hold a high standard for themselves and their subcontractors, and I can always trust their expertise and complete follow through on any project.
+            </p>
+            <div className="border-t border-edge pt-6 mt-8">
+              <p className="font-display font-700 text-sm uppercase tracking-widest text-fore">Marie Dibona</p>
+              <p className="font-display text-xs uppercase tracking-widest text-muted mt-0.5">Horse Tack Room, Hay Barn &amp; Shelter</p>
+            </div>
+          </div>
         </div>
       </section>
 

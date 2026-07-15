@@ -10,8 +10,9 @@ const projectTypes = [
   'Other / Not Sure Yet',
 ];
 
-// Formspree endpoint — replace YOUR_FORM_ID with the ID from your free Formspree form.
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+// Web3Forms — submissions are emailed to the connected account (steelemimi7@gmail.com).
+const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+const WEB3FORMS_ACCESS_KEY = 'c9f3bf02-0066-44e1-a007-cc344bae11d3';
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -30,10 +31,14 @@ export default function Contact() {
     setSending(true);
     setError('');
     try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
+      const res = await fetch(WEB3FORMS_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: 'New message from Ascent Construction website',
+          ...form,
+        }),
       });
       if (res.ok) {
         setSubmitted(true);
