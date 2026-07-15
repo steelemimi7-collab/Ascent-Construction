@@ -252,6 +252,7 @@ export default function Home() {
             <div className="border-t border-edge pt-6 mt-8">
               <p className="font-display font-700 text-sm uppercase tracking-widest text-fore">Marie Dibona</p>
               <p className="font-display text-xs uppercase tracking-widest text-muted mt-0.5">Horse Tack Room, Hay Barn &amp; Shelter</p>
+              <Link href="/projects/pasture" className="inline-block mt-3 font-display text-xs uppercase tracking-widest text-accent hover:text-accent-light transition-colors">View the Horse Barns &amp; Pasture project →</Link>
             </div>
           </div>
         </div>
