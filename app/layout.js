@@ -2,8 +2,10 @@ import './globals.css';
 import Script from 'next/script';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import JsonLd from '@/components/JsonLd';
 import { SITE_URL, SITE_NAME } from '@/lib/site';
 import { DEFAULT_OG_IMAGE } from '@/lib/seo';
+import { organizationSchema } from '@/lib/schema';
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
@@ -46,6 +48,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="font-body antialiased">
+        <JsonLd data={organizationSchema()} />
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <Navbar />
         <main id="main-content">{children}</main>

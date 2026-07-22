@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { PHONE, PHONE_TEL } from '@/lib/site';
+import { PHONE, PHONE_TEL, EMAIL, LICENSE_NUMBER, SERVICE_AREA_TEXT } from '@/lib/site';
+import { AREAS, AREA_SLUGS } from '@/lib/areas';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -42,7 +43,7 @@ export default function Footer() {
 
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
             <img src="/Logo.png" alt="Ascent Construction Group" className="h-30 w-auto" />
@@ -64,6 +65,25 @@ export default function Footer() {
             </nav>
           </div>
 
+          {/* Service Areas */}
+          <div>
+            <p className="label mb-5">Service Areas</p>
+            <nav className="flex flex-col gap-3">
+              {AREA_SLUGS.map((slug) => (
+                <Link
+                  key={slug}
+                  href={`/areas/${slug}`}
+                  className="font-display font-semibold text-xs tracking-widest uppercase text-muted hover:text-fore transition-colors"
+                >
+                  {AREAS[slug].footerLabel || AREAS[slug].city}
+                </Link>
+              ))}
+              <span className="font-display font-semibold text-xs tracking-widest uppercase text-muted">
+                Clovis
+              </span>
+            </nav>
+          </div>
+
           {/* Contact */}
           <div>
             <p className="label mb-5">Contact</p>
@@ -76,18 +96,17 @@ export default function Footer() {
               </div>
               <div>
                 <span className="font-display font-semibold text-xs uppercase tracking-widest text-fore/50 block mb-0.5">Email</span>
-                <a href="mailto:pat@ascentconstructiongroup.com" className="text-fore hover:text-accent transition-colors">
-                  pat@ascentconstructiongroup.com
+                <a href={`mailto:${EMAIL}`} className="text-fore hover:text-accent transition-colors">
+                  {EMAIL}
                 </a>
               </div>
               <div>
                 <span className="font-display font-semibold text-xs uppercase tracking-widest text-fore/50 block mb-0.5">License</span>
-                <span className="text-fore">#1080865
-                </span>
+                <span className="text-fore">{`#${LICENSE_NUMBER}`}</span>
               </div>
               <div>
                 <span className="font-display font-semibold text-xs uppercase tracking-widest text-fore/50 block mb-0.5">Service Area</span>
-                <span className="text-fore">Central Valley · Shaver Lake · Huntington Lake</span>
+                <span className="text-fore">{SERVICE_AREA_TEXT}</span>
               </div>
             </div>
           </div>

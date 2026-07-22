@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { PHONE, PHONE_TEL } from '@/lib/site';
 import { buildMetadata } from '@/lib/seo';
+import JsonLd from '@/components/JsonLd';
+import { breadcrumbSchema } from '@/lib/schema';
 
 export const metadata = buildMetadata({
   title: 'Accessibility | Ascent Construction Group, Central Valley',
@@ -12,6 +14,7 @@ export const metadata = buildMetadata({
 export default function Accessibility() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Accessibility', path: '/accessibility' }])} />
       {/* Hero */}
       <section className="relative bg-base pt-32 pb-20 border-b border-edge overflow-hidden">
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-accent" />

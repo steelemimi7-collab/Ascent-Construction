@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { PHONE, PHONE_TEL } from '@/lib/site';
+import { PHONE, PHONE_TEL, EMAIL, LICENSE_NUMBER, SERVICE_AREA_TEXT } from '@/lib/site';
 
 const projectTypes = [
   'Residential Construction',
@@ -92,26 +92,23 @@ export default function Contact() {
                     Email
                   </p>
                   <a
-                    href="mailto:pat@ascentconstructiongroup.com"
+                    href={`mailto:${EMAIL}`}
                     className="font-display font-700 text-xl text-fore hover:text-accent transition-colors"
                   >
-                    pat@ascentconstructiongroup.com
+                    {EMAIL}
                   </a>
                 </div>
                 <div>
                   <p className="font-display font-700 text-xs uppercase tracking-widest2 text-muted mb-2">
                     Service Area
                   </p>
-                  <p className="font-body text-base text-fore">
-                    Primarily serving the Central Valley: Fresno, Clovis, Madera, Visalia, and
-                    surrounding communities.
-                  </p>
+                  <p className="font-body text-base text-fore">{SERVICE_AREA_TEXT}</p>
                 </div>
                 <div>
                   <p className="font-display font-700 text-xs uppercase tracking-widest2 text-muted mb-2">
                     License
                   </p>
-                  <p className="font-body text-base text-fore">#1080865</p>
+                  <p className="font-body text-base text-fore">{`#${LICENSE_NUMBER}`}</p>
                 </div>
               </div>
 

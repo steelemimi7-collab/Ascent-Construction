@@ -1,4 +1,6 @@
 import { buildMetadata } from '@/lib/seo';
+import JsonLd from '@/components/JsonLd';
+import { breadcrumbSchema } from '@/lib/schema';
 
 export const metadata = buildMetadata({
   title: 'Contact Ascent Construction | Central Valley, California',
@@ -8,5 +10,10 @@ export const metadata = buildMetadata({
 });
 
 export default function ContactLayout({ children }) {
-  return children;
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact' }])} />
+      {children}
+    </>
+  );
 }

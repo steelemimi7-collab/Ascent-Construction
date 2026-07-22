@@ -2,6 +2,8 @@ import Link from 'next/link';
 import ProjectGallery from '@/components/ProjectGallery';
 import HeroPhoto from '@/components/HeroPhoto';
 import { buildMetadata } from '@/lib/seo';
+import JsonLd from '@/components/JsonLd';
+import { breadcrumbSchema, projectSchema } from '@/lib/schema';
 
 const projects = {
   'custom-home-fresno': {
@@ -497,6 +499,23 @@ export default function ProjectPage({ params }) {
 
   return (
     <>
+      <JsonLd
+        data={[
+          projectSchema({
+            slug: params.slug,
+            title: project.title,
+            type: project.type,
+            location: project.location,
+            description: project.description,
+            hero: project.hero,
+          }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Gallery', path: '/gallery' },
+            { name: project.title, path: `/projects/${params.slug}` },
+          ]),
+        ]}
+      />
       <section className="relative bg-base pt-32 pb-16 border-b border-edge overflow-hidden">
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-accent" />
         <div className="max-w-7xl mx-auto px-6">
