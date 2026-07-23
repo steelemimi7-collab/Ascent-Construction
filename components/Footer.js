@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { PHONE, PHONE_TEL, EMAIL, LICENSE_NUMBER, SERVICE_AREA_TEXT } from '@/lib/site';
+import { PHONE, PHONE_TEL, EMAIL, LICENSE_NUMBER, SERVICE_AREA_TEXT, HOURS_TEXT } from '@/lib/site';
 import { AREAS, AREA_SLUGS } from '@/lib/areas';
 
 const navLinks = [
@@ -7,6 +7,7 @@ const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
   { href: '/gallery', label: 'Gallery' },
+  { href: '/faq', label: 'FAQ' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -78,9 +79,6 @@ export default function Footer() {
                   {AREAS[slug].footerLabel || AREAS[slug].city}
                 </Link>
               ))}
-              <span className="font-display font-semibold text-xs tracking-widest uppercase text-muted">
-                Clovis
-              </span>
             </nav>
           </div>
 
@@ -99,6 +97,10 @@ export default function Footer() {
                 <a href={`mailto:${EMAIL}`} className="text-fore hover:text-accent transition-colors">
                   {EMAIL}
                 </a>
+              </div>
+              <div>
+                <span className="font-display font-semibold text-xs uppercase tracking-widest text-fore/50 block mb-0.5">Hours</span>
+                <span className="text-fore">{HOURS_TEXT}</span>
               </div>
               <div>
                 <span className="font-display font-semibold text-xs uppercase tracking-widest text-fore/50 block mb-0.5">License</span>

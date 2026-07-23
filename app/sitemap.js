@@ -5,7 +5,7 @@ import { AREA_SLUGS } from '@/lib/areas';
 export default function sitemap() {
   const lastModified = new Date();
 
-  const pages = ['', '/about', '/services', '/gallery', '/contact', '/privacy', '/accessibility'];
+  const pages = ['', '/about', '/services', '/gallery', '/faq', '/contact', '/privacy', '/accessibility'];
 
   const staticEntries = pages.map((path) => ({
     url: `${SITE_URL}${path}`,
