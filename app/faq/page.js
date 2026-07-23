@@ -11,7 +11,7 @@ const FAQS = [
   },
   {
     q: 'What types of projects do you take on?',
-    a: 'We build custom homes and mountain cabins, whole-home and interior remodels, ranch and agricultural buildings, outdoor living and recreation spaces, fire features, barn conversions, and commercial build-outs. Many projects cross several of these areas, and we are set up to handle the whole thing.',
+    a: 'We build custom homes and mountain cabins, whole-home and interior remodels, ranch and agricultural buildings, outdoor living and recreation spaces, fire features, barn conversions, and commercial build-outs. Many projects cross several of these areas.',
   },
   {
     q: 'Are you a licensed contractor?',

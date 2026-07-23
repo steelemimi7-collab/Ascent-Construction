@@ -156,7 +156,7 @@ export default function Services() {
         <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="border-l-2 border-accent pl-6 max-w-2xl">
             <p className="font-body text-base text-muted leading-relaxed italic">
-              Not sure which category your project falls into? Reach out and we will help you figure out the right approach. Many projects cross multiple areas, and we are set up to handle the whole thing.
+              Not sure which category your project falls into? Reach out and we will help you figure out the right approach. Many projects cross multiple areas.
             </p>
             <Link href="/contact" className="btn-primary text-xs mt-6 inline-block">Get in Touch</Link>
           </div>
