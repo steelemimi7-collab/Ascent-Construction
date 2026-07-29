@@ -16,6 +16,7 @@ const projects = [
   { id: 21, name: 'Pool House', type: 'Residential', location: 'Fresno, CA', year: '2024', src: '/pool-house/pool-house-03.jpg', thumb: '/thumbs/pool-house.jpg' },
   { id: 23, name: 'Barn to Residence', type: 'Residential', location: 'Auberry, CA', year: '2024', src: '/barn-to-residence/barn-to-residence-exterior.jpg', thumb: '/thumbs/barn-to-residence.jpg' },
   { id: 24, name: 'Office', type: 'Commercial', location: 'Fresno, CA', year: '2024', src: '/office/office-01.jpg', thumb: '/thumbs/office.jpg' },
+  { id: 25, name: 'Huntington Cabin', type: 'Mountain Homes', location: 'Huntington Lake, CA', year: '2024', src: '/huntington-cabin/huntington-cabin-hero.jpg', thumb: '/thumbs/huntington-cabin.jpg' },
 ];
 
 export default function Gallery() {

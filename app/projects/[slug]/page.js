@@ -338,6 +338,31 @@ const projects = {
       { src: null, caption: 'Photo 3' },
     ],
   },
+  'huntington-cabin': {
+    title: 'Huntington Cabin',
+    type: 'Mountain Homes',
+    location: 'Huntington Lake, CA',
+    hero: '/huntington-cabin/huntington-cabin-hero.jpg',
+    video: '/huntington-cabin/huntington-cabin.mp4',
+    description: 'A full remodel of an A-frame cabin at Huntington Lake. The original cabin, shown in the before photos, was dated and dark inside. We reworked it into a warm, refined mountain retreat with cedar-lined walls and ceilings, a stone hearth and wood stove, antler chandeliers, a sage-green kitchen with a pro range and tile backsplash, and walls of glass that open the great room to the pines. The exterior was refreshed to match, keeping the classic A-frame lines that make the cabin feel at home in the snow.',
+    details: [
+      { label: 'Project Type', value: 'Mountain Home Remodel' },
+      { label: 'Location', value: 'Huntington Lake, CA' },
+    ],
+    photos: [
+      { src: '/huntington-cabin/huntington-cabin-01.jpg' },
+      { src: '/huntington-cabin/huntington-cabin-02.jpg' },
+      { src: '/huntington-cabin/huntington-cabin-03.jpg' },
+      { src: '/huntington-cabin/huntington-cabin-05.jpg' },
+      { src: '/huntington-cabin/huntington-cabin-06.jpg' },
+      { src: '/huntington-cabin/huntington-cabin-08.jpg' },
+      { src: '/huntington-cabin/huntington-cabin-09.jpg' },
+      { src: '/huntington-cabin/huntington-cabin-10.jpg' },
+      { src: '/huntington-cabin/huntington-cabin-12.jpg' },
+      { src: '/huntington-cabin/huntington-cabin-13.jpg' },
+      { src: '/huntington-cabin/huntington-cabin-before.jpg', caption: 'Before the remodel' },
+    ],
+  },
   'shaver-cabin': {
     title: 'Shaver Cabin',
     type: 'Mountain Homes',
@@ -580,6 +605,23 @@ export default function ProjectPage({ params }) {
           </div>
         </div>
       </section>
+
+      {project.video && (
+        <section className="bg-surface-2 border-b border-edge">
+          <div className="max-w-5xl mx-auto px-6 py-16">
+            <p className="label mb-6">Project Video</p>
+            <video
+              controls
+              preload="metadata"
+              poster={project.hero}
+              className="w-full border border-edge bg-base"
+            >
+              <source src={project.video} type="video/mp4" />
+              Your browser does not support embedded video.
+            </video>
+          </div>
+        </section>
+      )}
 
       <section className="bg-surface border-b border-edge">
         <div className="max-w-7xl mx-auto px-6 py-20">

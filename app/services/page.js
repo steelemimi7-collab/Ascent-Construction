@@ -30,6 +30,7 @@ const services = [
     detail: 'Mountain builds come with unique challenges: steep grades, remote access, weather exposure, and site conditions that vary dramatically from flatland construction. We plan for all of it from the start.',
     projects: [
       { slug: 'shaver-cabin', name: 'Shaver Cabin', location: 'Shaver Lake, CA', year: '2025', cover: '/thumbs/shaver.jpg' },
+      { slug: 'huntington-cabin', name: 'Huntington Cabin', location: 'Huntington Lake, CA', cover: '/thumbs/huntington-cabin.jpg' },
     ],
   },
   {
